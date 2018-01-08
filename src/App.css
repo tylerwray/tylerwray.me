@@ -9,20 +9,40 @@
 
 .App-header {
   background-color: #222;
+  background-image: url("./images/geometry.png");
   height: 150px;
-  padding: 20px;
+  padding: 10px;
   color: white;
 }
 
 .App-title {
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 10px;
   font-size: 1.5em;
+}
+
+.App-first-name {
+  font-weight: 300;
+}
+
+.App-last-name {
+  font-weight: 600;
+}
+
+.App-portrait {
+  height: 250px;
+  width: 250px;
+  background-color: blue;
+  border-radius: 50%;
+  background-image: url("./images/portrait.jpg");
+  background-position: center;
+  background-size: contain;
+  margin: 0 auto;
+  z-index: 1;
+  box-shadow: 0px 5px 8px gray;
 }
 
 .App-intro {
   font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }

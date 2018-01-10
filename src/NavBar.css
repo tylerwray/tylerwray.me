@@ -2,10 +2,20 @@
   position: relative;
   color: white;
   margin-bottom: 25px;
+  padding-top: 10px;
 }
 
 .Name {
   font-size: 1.5em;
+}
+
+.Name:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.Name {
+  color: white;
 }
 
 .First-name {

@@ -1,0 +1,8 @@
+.Nav-item {
+  color: white;
+}
+
+.Nav-item:hover {
+  color: lightgray;
+  text-decoration: none;
+}

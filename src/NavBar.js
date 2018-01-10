@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
+import { Link } from 'react-router-dom';
 
 import NavItem from './NavItem';
 
@@ -27,11 +28,11 @@ function NavBar() {
     <Grid className="Nav">
       <Row>
         <Col xs={4}>
-          <span className="Name">
+          <Link to={'/'} className="Name">
             <span className="First-name">Tyler</span>
             &nbsp;
             <span className="Last-name">Wray</span>
-          </span>
+          </Link>
         </Col>
         {NAV_ITEMS.map((item, key) => (
           <Col xs={2} key={key}>

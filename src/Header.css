@@ -1,0 +1,31 @@
+.Header-background {
+  background-color: var(--default-primary-color);
+  background-image: url("./images/geometry.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  min-height: 100px;
+  height: 25vh;
+  max-height: 200px;
+  box-sizing: border-box;
+  padding: 48px 48px 32px 48px;
+  overflow: hidden;
+  transform: skewY(4deg);
+  transform-origin: 100%;
+}
+
+@media only screen and (max-width : 700px)  {
+  .Header-background {
+    transform: skewY(0deg);
+  }
+}
+
+@media only screen and (min-width : 1100px)  {
+  .Header-background {
+    min-height: 200px;
+    max-height: 400px;
+  }
+}

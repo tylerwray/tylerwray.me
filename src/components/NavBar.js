@@ -4,9 +4,7 @@ import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
 import { Link } from 'react-router-dom';
 
-import NavItem from './NavItem';
-
-import './NavBar.css';
+import '../styles/NavBar.css';
 
 const NAV_ITEMS = [
   {
@@ -36,7 +34,9 @@ function NavBar() {
         </Col>
         {NAV_ITEMS.map((item, key) => (
           <Col xs={2} key={key}>
-            <NavItem name={item.name} href={item.href} />
+            <Link className="Nav-item" to={item.href}>
+              {item.name}
+            </Link>
           </Col>
         ))}
       </Row>

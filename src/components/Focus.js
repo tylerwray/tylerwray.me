@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Focus.css';
+import '../styles/Focus.css';
 
 function Focus() {
   return (

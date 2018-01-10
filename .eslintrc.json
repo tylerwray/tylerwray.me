@@ -155,7 +155,6 @@
         "no-extend-native": "error",
         "no-extra-bind": "error",
         "no-extra-label": "error",
-        "no-extra-parens": "error",
         "no-floating-decimal": "error",
         "no-implicit-coercion": "error",
         "no-implicit-globals": "error",
@@ -230,7 +229,6 @@
         "no-whitespace-before-property": "error",
         "no-with": "error",
         "nonblock-statement-body-position": "error",
-        "object-curly-newline": "error",
         "object-curly-spacing": [
             "error",
             "always"
@@ -252,7 +250,6 @@
         "prefer-rest-params": "error",
         "prefer-spread": "error",
         "prefer-template": "error",
-        "quote-props": "error",
         "quotes": [
             "error",
             "single"
@@ -268,8 +265,6 @@
             "last"
         ],
         "sort-imports": "off",
-        "sort-keys": "error",
-        "sort-vars": "error",
         "space-before-blocks": "error",
         "space-before-function-paren": "off",
         "space-in-parens": [

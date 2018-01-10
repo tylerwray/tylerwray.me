@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Alert from 'react-bootstrap/lib/Alert';
+import NavBar from './NavBar';
 
 import './App.css';
 
@@ -9,13 +9,7 @@ function App() {
     <div className="App">
       <div className="Header-background"></div>
       <header className="Header">
-        <nav className="Nav">
-          <div className="Name">
-            <span className="First-name">Tyler</span>
-            &nbsp;
-            <span className="Last-name">Wray</span>
-          </div>
-        </nav>
+        <NavBar />
         <div className="Focus">
           <div className="Portrait"></div>
           <p className="Mission-statement">
@@ -23,9 +17,6 @@ function App() {
           </p>
         </div>
       </header>
-      <Alert>
-        hello
-      </Alert>
     </div>
   );
 }

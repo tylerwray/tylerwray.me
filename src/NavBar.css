@@ -1,0 +1,17 @@
+.Nav {
+  position: relative;
+  color: white;
+  margin-bottom: 25px;
+}
+
+.Name {
+  font-size: 1.5em;
+}
+
+.First-name {
+  font-weight: 300;
+}
+
+.Last-name {
+  font-weight: 600;
+}

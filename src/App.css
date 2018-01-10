@@ -1,36 +1,57 @@
+:root {
+  --box-shadow-color: gray;
+  --dark-primary-color: #512DA8;
+  --default-primary-color: #673AB7;
+  --light-primary-color: #D1C4E9;
+  --text-primary-color: #FFFFFF;
+  --accent-color: #FFC107;
+  --primary-text-color: #0c0b0b;
+  --secondary-text-color: #757575;
+  --divider-color: #BDBDBD;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  background-image: url("./images/geometry.png");
-  height: 150px;
+.Header {
   padding: 10px;
-  color: white;
 }
 
-.App-title {
-  text-align: left;
-  margin-top: 10px;
-  margin-left: 10px;
+.Header-background {
+  background-color: var(--default-primary-color);
+  background-image: url("./images/geometry.png");
+  width: 100%;
+  min-height: 150px;
+  max-height: 300px;
+  position: absolute;
+  height: 50vh;
+  transform: skewY(8deg);
+  transform-origin: 110%;
+}
+
+.Nav {
+  position: relative;
+}
+
+.Name {
+  color: white;
   font-size: 1.5em;
 }
 
-.App-first-name {
+.First-name {
   font-weight: 300;
 }
 
-.App-last-name {
+.Last-name {
   font-weight: 600;
 }
 
-.App-portrait {
+.Focus {
+  position: relative;
+}
+
+.Portrait {
   height: 250px;
   width: 250px;
   background-color: blue;
@@ -39,10 +60,10 @@
   background-position: center;
   background-size: contain;
   margin: 0 auto;
-  z-index: 1;
-  box-shadow: 0px 5px 8px gray;
+  box-shadow: 0px 5px 14px 2px var(--box-shadow-color);
 }
 
-.App-intro {
+.Mission-statement {
+  color: black;
   font-size: large;
 }

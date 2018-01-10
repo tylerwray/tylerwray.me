@@ -1,25 +1,33 @@
 import React from 'react';
+
+import Alert from 'react-bootstrap/lib/Alert';
+
 import './App.css';
 
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">
-            <span className="App-first-name">Tyler</span>
+function App() {
+  return (
+    <div className="App">
+      <div className="Header-background"></div>
+      <header className="Header">
+        <nav className="Nav">
+          <div className="Name">
+            <span className="First-name">Tyler</span>
             &nbsp;
-            <span className="App-last-name">Wray</span>
-          </h1>
-        </header>
-        <div className="App-portrait"></div>
-        <p className="App-intro">
-          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-          Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.
-        </p>
-      </div>
-    );
-  }
+            <span className="Last-name">Wray</span>
+          </div>
+        </nav>
+        <div className="Focus">
+          <div className="Portrait"></div>
+          <p className="Mission-statement">
+            Striving to improve the lives of others, using the software I create
+          </p>
+        </div>
+      </header>
+      <Alert>
+        hello
+      </Alert>
+    </div>
+  );
 }
 
 export default App;

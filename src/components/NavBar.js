@@ -25,7 +25,10 @@ function NavBar() {
   return (
     <Grid className="Nav">
       <Row>
-        <Col xs={4}>
+        <Col xs={2} smHidden mdHidden lgHidden>
+          E
+        </Col>
+        <Col xs={10} sm={4}>
           <Link to={'/'} className="Name">
             <span className="First-name">Tyler</span>
             &nbsp;
@@ -33,7 +36,7 @@ function NavBar() {
           </Link>
         </Col>
         {NAV_ITEMS.map((item, key) => (
-          <Col xs={2} key={key}>
+          <Col xs={2} xsHidden key={key}>
             <Link className="Nav-item" to={item.href}>
               {item.name}
             </Link>

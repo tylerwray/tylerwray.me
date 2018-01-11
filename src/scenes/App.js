@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Focus from '../components/Focus';
-import Profile from '../components/Profile';
-import Blog from '../components/Blog';
-import Contact from '../components/Contact';
+import Profile from '../scenes/Profile';
+import Blog from '../scenes/Blog';
+import Contact from '../scenes/Contact';
 
 import '../styles/App.css';
 

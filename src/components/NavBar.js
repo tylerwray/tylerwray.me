@@ -26,7 +26,11 @@ function NavBar() {
     <Grid className="Nav">
       <Row>
         <Col xs={2} smHidden mdHidden lgHidden>
-          E
+          <div className="Hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
         </Col>
         <Col xs={10} sm={4}>
           <Link to={'/'} className="Name">

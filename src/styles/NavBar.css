@@ -4,6 +4,50 @@
   margin-bottom: 25px;
   padding-top: 10px;
 }
+.Hamburger {
+  width: 30px;
+  height: 26px;
+  position: relative;
+  margin: 12px auto;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  float: left;
+  cursor: pointer;
+}
+
+.Hamburger span {
+  display: block;
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: white;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+
+.Hamburger span:nth-child(1) {
+  top: 1px;
+  transform-origin: left center; }
+
+.Hamburger span:nth-child(2) {
+  top: 11px;
+  transform-origin: left center; }
+
+.Hamburger span:nth-child(3) {
+  top: 22px;
+  transform-origin: left center; }
+
+.Hamburger.open span:nth-child(1) {
+  transform: rotate(45deg); }
+
+.Hamburger.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0; }
+
+.Hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg); }
 
 .Name {
   font-size: 1.5em;
@@ -33,5 +77,10 @@
 
 .Nav-item:hover {
   color: lightgray;
+  text-decoration: none;
+}
+
+a.Nav-item:visited, a.Name:visited, a.Name:active, a.Nav-item:active {
+  color: white;
   text-decoration: none;
 }

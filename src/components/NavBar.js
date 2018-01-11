@@ -27,25 +27,26 @@ function NavBar() {
       <Row>
         <Col xs={2} smHidden mdHidden lgHidden>
           <div className="Hamburger">
+            <input type="checkbox" />
             <span></span>
             <span></span>
             <span></span>
           </div>
         </Col>
-        <Col xs={10} sm={4}>
+        <Col xs={8} sm={2}>
           <Link to={'/'} className="Name">
             <span className="First-name">Tyler</span>
             &nbsp;
             <span className="Last-name">Wray</span>
           </Link>
         </Col>
-        {NAV_ITEMS.map((item, key) => (
-          <Col xs={2} xsHidden key={key}>
-            <Link className="Nav-item" to={item.href}>
+        <Col className="Pages" sm={8} xsHidden>
+          {NAV_ITEMS.map((item, key) => (
+            <Link key={key} className="Nav-item" to={item.href}>
               {item.name}
             </Link>
-          </Col>
-        ))}
+          ))}
+        </Col>
       </Row>
     </Grid>
   );

@@ -80,7 +80,18 @@
   text-decoration: none;
 }
 
-a.Nav-item:visited, a.Name:visited, a.Name:active, a.Nav-item:active {
+a.Name:hover,
+a.Nav-item:hover {
+  color: lightgray;
+  text-decoration: underline;
+}
+
+a.Nav-item:visited,
+a.Name:visited,
+a.Name:active,
+a.Nav-item:active,
+a.Name:focus,
+a.Nav-item:focus {
   color: white;
   text-decoration: none;
 }

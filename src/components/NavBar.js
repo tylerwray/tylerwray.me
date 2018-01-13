@@ -17,6 +17,8 @@ class NavBar extends Component {
     super(props);
 
     this.toggleSideNav = this.toggleSideNav.bind(this);
+    this.closeSideNav = this.closeSideNav.bind(this);
+
     this.state = {
       isSideNavOpen: NavStore.isSideNavOpen,
       navItems: NavStore.navItems
@@ -37,10 +39,14 @@ class NavBar extends Component {
     }
   }
 
+  closeSideNav() {
+    NavActions.closeSideNav();
+  }
+
   render() {
     return (
       <div>
-        <SideNav open={this.state.isSideNavOpen} navItems={this.state.navItems} />
+        <SideNav open={this.state.isSideNavOpen} navItems={this.state.navItems} onClose={this.closeSideNav}/>
         <Grid className="Nav">
           <Row>
             <Col xs={2} smHidden mdHidden lgHidden>

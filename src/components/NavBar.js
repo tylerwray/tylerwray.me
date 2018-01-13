@@ -50,7 +50,7 @@ class NavBar extends Component {
               <Link to={'/'} className="Name">
                 <span className="First-name">Tyler</span>
                 &nbsp;
-              <span className="Last-name">Wray</span>
+                <span className="Last-name">Wray</span>
               </Link>
             </Col>
             <Col className="Pages" sm={8} xsHidden>

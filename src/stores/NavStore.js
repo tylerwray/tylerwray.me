@@ -1,5 +1,6 @@
 import { EventEmitter } from 'events';
 
+import { OPEN_SIDE_NAV, CLOSE_SIDE_NAV } from '../constants';
 import dispatcher from '../dispatcher';
 
 class NavStore extends EventEmitter {
@@ -24,10 +25,10 @@ class NavStore extends EventEmitter {
 
   handleActions({ type }) {
     switch (type) {
-      case 'OPEN_SIDE_NAV':
+      case OPEN_SIDE_NAV:
         this.openSideNav();
         break;
-      case 'CLOSE_SIDE_NAV':
+      case CLOSE_SIDE_NAV:
         this.closeSideNav();
         break;
       default:

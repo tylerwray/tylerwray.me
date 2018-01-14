@@ -48,7 +48,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js --env=jsdom"
+    "test": "node scripts/test.js --env=jsdom",
+    "coverage": "node scripts/test.js --env=jsdom --coverage"
   },
   "devDependencies": {
     "eslint": "^4.15.0",
@@ -56,14 +57,20 @@
   },
   "jest": {
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx,mjs}"
+      "src/**/*.{js}"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "src/index.js",
+      "src/dispatcher.js",
+      "src/registerServiceWorker.js"
     ],
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
     "testMatch": [
-      "<rootDir>/src/**/__tests__/**/*.{js,jsx,mjs}",
-      "<rootDir>/src/**/?(*.)(spec|test).{js,jsx,mjs}"
+      "<rootDir>/src/**/__tests__/**/*.{js}",
+      "<rootDir>/src/**/?(*.)(spec|test).{js}"
     ],
     "testEnvironment": "node",
     "testURL": "http://localhost",

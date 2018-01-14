@@ -1,3 +1,5 @@
+![build status](https://api.travis-ci.org/wraytw/tyler.me.svg?branch=master)
+
 # tyler.me
 My personal site
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

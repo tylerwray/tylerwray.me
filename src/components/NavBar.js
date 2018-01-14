@@ -46,7 +46,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <SideNav open={this.state.isSideNavOpen} navItems={this.state.navItems} onClose={this.closeSideNav}/>
+        <SideNav open={this.state.isSideNavOpen} navItems={this.state.navItems} closeSideNav={this.closeSideNav}/>
         <Grid className="Nav">
           <Row>
             <Col xs={2} smHidden mdHidden lgHidden>

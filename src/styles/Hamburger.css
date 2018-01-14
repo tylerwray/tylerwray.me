@@ -4,7 +4,6 @@
   position: relative;
   margin: 12px auto;
   transform: rotate(0deg);
-  transition: all 0.5s ease-in-out;
   float: left;
   cursor: pointer;
   z-index: 3;
@@ -19,7 +18,7 @@
   opacity: 1;
   left: 0;
   transform: rotate(0deg);
-  transition: all 0.35s ease-in-out;
+  transition: all 250ms ease-in-out;
   transform-origin: 4px 0px;
 }
 
@@ -57,8 +56,15 @@
 
 .Hamburger[open] span:nth-child(2) {
   width: 0%;
+  opacity: 0;
 }
 
 .Hamburger[open] span:nth-child(3) {
   transform: rotate(-45deg);
+}
+
+@media (hover: hover) {
+  .Hamburger[open]:hover span {
+    background-color: gray;
+  }
 }

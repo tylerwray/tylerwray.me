@@ -10,10 +10,6 @@
   text-align: left;
 }
 
-.Name:hover {
-  text-decoration: none;
-}
-
 .Name {
   color: white;
 }
@@ -35,14 +31,20 @@
   padding: 0 50px;
 }
 
-a.Name:hover,
-a.Nav-item:hover {
-  color: lightgray;
-  text-decoration: none;
-}
-
 a.Name:focus,
 a.Nav-item:focus {
   color: white;
   text-decoration: none;
+}
+
+@media (hover: hover) {
+  .Name:hover {
+    text-decoration: none;
+  }
+
+  a.Name:hover,
+  a.Nav-item:hover {
+    color: lightgray;
+    text-decoration: none;
+  }
 }

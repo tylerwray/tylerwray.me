@@ -1,6 +1,7 @@
 .SideNav {
   background-color: white;
   position: fixed;
+  padding-top: 100px;
   left: -250px;
   width: 250px;
   height: 100%;
@@ -20,10 +21,28 @@
   width: 100%;
   height: 100%;
   z-index: 1;
-  display: none;
+  visibility: hidden;
+  transition: all 200ms ease-in-out;
 }
 
 .SideNav-overlay[open] {
   background-color: rgba(0, 0, 0, 0.4);
-  display: block;
+  transition: all 200ms ease-in-out;
+  visibility: visible;
+}
+
+.SideNav-Item {
+  padding: 5px;
+}
+
+.SideNav-Item a {
+  text-decoration: none;
+  color: black;
+}
+
+@media (hover: hover) {
+  .SideNav-Item:hover a {
+    cursor: pointer;
+    color: gray;
+  }
 }

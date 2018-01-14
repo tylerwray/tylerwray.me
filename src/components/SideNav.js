@@ -4,13 +4,16 @@ import { Link } from 'react-router-dom';
 
 import '../styles/SideNav.css';
 
-const SideNav = ({ open, navItems, onClose }) => (
+const SideNav = ({ open, navItems, closeSideNav }) => (
   <div className="SideNav-container">
-    <div className="SideNav-overlay" open={open} onClick={onClose}></div>
+    <div className="SideNav-overlay" open={open} onClick={closeSideNav}></div>
     <div className="SideNav" open={open}>
+      <div className="SideNav-Item">
+        <Link onClick={closeSideNav} to={'/'}>Home</Link>
+      </div>
       {navItems.map((item, key) =>
-        <div key={key}>
-          <Link to={item.href}>item.name</Link>
+        <div className="SideNav-Item" key={key}>
+          <Link onClick={closeSideNav} to={item.href}>{item.name}</Link>
         </div>
       )}
     </div>
@@ -20,7 +23,7 @@ const SideNav = ({ open, navItems, onClose }) => (
 SideNav.propTypes = {
   open: PropTypes.bool.isRequired,
   navItems: PropTypes.array,
-  onClose: PropTypes.func
+  closeSideNav: PropTypes.func
 };
 
 export default SideNav;

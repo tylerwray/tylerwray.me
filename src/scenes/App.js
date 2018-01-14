@@ -13,10 +13,10 @@ const App = () => (
   <Router>
     <div className="App">
       <Header />
-      <Route exact={true} path="/" component={Focus}/>
-      <Route exact={true} path="/profile" component={Profile}/>
-      <Route exact={true} path="/blog" component={Blog}/>
-      <Route exact={true} path="/contact" component={Contact}/>
+      <Route exact={true} path="/" component={Focus} />
+      <Route exact={true} path="/profile" component={Profile} />
+      <Route exact={true} path="/blog" component={Blog} />
+      <Route exact={true} path="/contact" component={Contact} />
     </div>
   </Router>
 );

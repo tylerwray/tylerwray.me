@@ -6,6 +6,7 @@ import dispatcher from '../dispatcher';
 class NavStore extends EventEmitter {
   constructor() {
     super();
+
     this.isSideNavOpen = false;
     this.navItems = [
       {

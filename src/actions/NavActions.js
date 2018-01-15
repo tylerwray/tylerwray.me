@@ -1,16 +1,18 @@
 import { OPEN_SIDE_NAV, CLOSE_SIDE_NAV } from '../constants';
 
-import dispatcher from '../dispatcher';
-
 class NavActions {
-  static openSideNav() {
-    dispatcher.dispatch({
+  constructor(dispatcher) {
+    this.dispatcher = dispatcher;
+  }
+
+  openSideNav() {
+    this.dispatcher.dispatch({
       type: OPEN_SIDE_NAV
     });
   }
 
-  static closeSideNav() {
-    dispatcher.dispatch({
+  closeSideNav() {
+    this.dispatcher.dispatch({
       type: CLOSE_SIDE_NAV
     });
   }

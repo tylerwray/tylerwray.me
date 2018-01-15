@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 import NavStore from '../stores/NavStore';
 import NavActions from '../actions/NavActions';
+import dispatcher from '../dispatcher';
 
 import SideNav from './SideNav';
 import Hamburger from './Hamburger';
@@ -15,6 +16,8 @@ import '../styles/NavBar.css';
 class NavBar extends Component {
   constructor(props) {
     super(props);
+
+    this.navActions = new NavActions(dispatcher);
 
     this.toggleSideNav = this.toggleSideNav.bind(this);
     this.closeSideNav = this.closeSideNav.bind(this);
@@ -33,14 +36,14 @@ class NavBar extends Component {
 
   toggleSideNav() {
     if (this.state.isSideNavOpen) {
-      NavActions.closeSideNav();
+      this.navActions.closeSideNav();
     } else {
-      NavActions.openSideNav();
+      this.navActions.openSideNav();
     }
   }
 
   closeSideNav() {
-    NavActions.closeSideNav();
+    this.navActions.closeSideNav();
   }
 
   render() {

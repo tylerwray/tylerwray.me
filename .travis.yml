@@ -1,16 +1,16 @@
 language: node_js
 node_js:
-  - "9"
+- '9'
 cache:
   directories:
   - node_modules
 script:
-  - npm test
-  - npm run build
+- npm test
+- npm run build
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $github_token
-  local_dir: build
-  on:
-    branch: master
+  provider: s3
+  access_key_id: "AKIAJWHGAB7UPXG6NVBA"
+  secret_access_key:
+    secure: TyALZLSpMdzZig668M3TWwo6cjtthZMHEpDn79Arn6CUdY0TkcRrYbySJMTl8k24PuOWDhC13FClCrkvvfPuahHawZvqPbW/V6d8mXLe+BooBIrHUsv4oRB3DNLnjpCEBFwnCa3PFySghf8+yFUDOdrMthrcPDPHWvKULnXR/VqI0NtMtUwbfscG+VJUxBDX1c+OnkCTmWl/i22DDzGC1PV1tsGDmanYus8LF5q/r/wyplDkYUYZoTNxVG/gs3+kM4F2QHXlHcKe8Q4AC7YHq14MXiasDWNMGQYfY4mEx96WpiSgsRGlg6pFjH6R1VxDiPsRYFhT33PFeETMy7YNCAGRRcvsj/lgE/rVhi+lrsw0+l+0tLMDRJNK6hSHC+kSfNc/kY1oETQf0BVZMqz+rdPY+P9S+zxPA4qK9tXZBMd5jWyCViBocnVwMp/JFtvl6d1et0BeJ+mm+jFbW8+fovAMpkkTXvRcHpjc8qZWHs08r1DMewFVoqubHl5c5Cz3tGlYQNUXWSQtvDMwGhpPKd/qg9KLwjiRyqgqv09tclAU20L18s+GPzV4bMEvf8kHoVgoQHSNr6oNV2vcYdzCivKXAj8n8XlERL2yj9pUCnTzdYRCqWwAda4qzBNVfE/1xvaOXtdQ846zBeLQ+ayxRiYU0GlbvvByEsM9BKJsdw8=
+  bucket: "tylerjwray.com"
+

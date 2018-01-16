@@ -4,12 +4,3 @@ node_js:
 cache:
   directories:
   - node_modules
-script:
-- npm test
-- npm run build
-deploy:
-  provider: s3
-  access_key_id: "AKIAJWHGAB7UPXG6NVBA"
-  secret_access_key: "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"
-  bucket: "tylerjwray.com"
-  skip_cleanup: true

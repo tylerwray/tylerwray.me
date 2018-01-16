@@ -9,10 +9,6 @@ script:
 - npm run build
 deploy:
   provider: s3
-  access_key_id: AKIAJWHGAB7UPXG6NVBA
-  secret_access_key:
-    secure: FSDsWxKn+l9aOR0ryeM6Q+cIN1TdLjDYgI8Qkz/jbI1qjlpH0il6lumn8F41AsrYrn76L5tkXV6ZEQcBDvpr7TShj8T+h9wrwciunyRQyOrC6Sn9lNM1YnRKD4JG6SQxRImZZVtTyE0MXpxbFLLQGj91XEy8lnSistQXcVT6QumtTK7XjSqUTWdpiDT2NbyLSsx445h/sGL43FCsjGjY13mCIskkkaUscXx1xd8+qDvIjAcxjVTpU0Ne8SoqBi7v85GUVOArHhclLQ7TU7pC+5rUjUMmsWOyy0xxHXsguJ5CB4llBmKcUu+WK4oV6zqEmqOEIecqWIz8fcM5g0iFycOEUE6FlnxF9S4kdJgcclrx4vxKlDCIO4KRR1gUhWyyfeJrYTVItTL4B9WdbI0iTRzFUEOHZZw3pCxLULN2Auvndb9bWjA1wN7mF7aoMjP0EYiR89Zx/qK3PHAxk0yqLoyArrG4AI/7IUx6uXQDo4LP1uMPhS+xIHtH68j4KU686J1+pXu6MNNXF8eOotNaTpPvMMMrK3V0lcwFdF7ZnPZv0BocjCQpLkEb1Mwa+/xllrMGECODByZrlMV1Z2S4H1ZBYYBLSqz/0tiJKHDdSBNSJ8ZAp1aRHHGSbHAh5mOuwMdInclqBHxMpxwgjaS/kAX/rjb0IzHdJV/h1SdEAlo=
-  bucket: tylerjwray.com
-  acl: ''
-  on:
-    repo: wraytw/tyler.me
+  access_key_id: "AKIAJWHGAB7UPXG6NVBA"
+  secret_access_key: "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"
+  bucket: "tylerjwray.com"

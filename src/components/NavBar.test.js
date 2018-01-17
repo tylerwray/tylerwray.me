@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import NavBar from './NavBar';
 
-jest.mock('react-router-dom', () => ({
-  Link: () => '<a></a>'
-}));
 jest.mock('react-bootstrap/lib/Grid', () => ({ children }) => children);
 jest.mock('react-bootstrap/lib/Row', () => ({ children }) => children);
 jest.mock('react-bootstrap/lib/Col', () => ({ children }) => children);
+jest.mock('react-router-dom', () => ({
+  Link: () => '<a></a>'
+}));
 jest.mock('../stores/NavStore', () => ({
   isSideNavOpen: true,
   navItems: [
@@ -34,6 +34,9 @@ jest.mock('../actions/NavActions', () =>
     };
   }
 );
+jest.mock('../dispatcher', () => () => ({}));
+jest.mock('./SideNav', () => () => '<div></div>');
+jest.mock('./Hamburger', () => () => '<div></div>');
 
 describe('Nav Bar', () => {
   it('should render without crashing', () => {

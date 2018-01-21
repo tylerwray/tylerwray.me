@@ -6,7 +6,9 @@ const Focus = () => (
   <div className="Focus">
     <div className="Portrait"></div>
     <p className="Mission-statement">
-      Working to improve the lives of others
+      Software Engineer at&nbsp;
+      <a href="https://www.berkadia.com/" rel="noopener noreferrer" target="_blank">Berkadia&nbsp;</a>
+      working on <span className="Mission-statement-emphasis">Polaris</span>
     </p>
   </div>
 );

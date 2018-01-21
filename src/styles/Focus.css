@@ -11,6 +11,13 @@
 }
 
 .Mission-statement {
-  color: black;
+  color: var(--secondary-text-color);
   font-size: large;
+  font-weight: lighter;
+  padding: 0 45px;
+}
+
+.Mission-statement-emphasis {
+  font-weight: bold;
+  color: var(--primary-text-color);
 }

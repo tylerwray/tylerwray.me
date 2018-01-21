@@ -1,3 +1,7 @@
+.Focus {
+  margin-bottom: 20px;
+}
+
 .Portrait {
   height: 250px;
   width: 250px;
@@ -17,7 +21,10 @@
   padding: 0 45px;
 }
 
-.Mission-statement-emphasis {
+.Statement {
+  padding: 3px;
+}
+
+.Emphasis {
   font-weight: bold;
-  color: var(--primary-text-color);
 }

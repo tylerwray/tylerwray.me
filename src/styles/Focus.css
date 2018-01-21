@@ -1,11 +1,11 @@
 .Portrait {
   height: 250px;
   width: 250px;
-  background-color: blue;
   border-radius: 50%;
-  background-image: url("../images/portrait.jpg");
+  background-color: var(--box-shadow-color);
+  background-image: url("../images/camel.jpg");
   background-position: center;
-  background-size: contain;
+  background-size: 100%;
   margin: 25px auto;
   box-shadow: 0px 0px 30px 2px var(--box-shadow-color);
 }

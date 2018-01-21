@@ -62,9 +62,3 @@
 .Hamburger[open] span:nth-child(3) {
   transform: rotate(-45deg);
 }
-
-@media (hover: hover) {
-  .Hamburger[open]:hover span {
-    background-color: gray;
-  }
-}

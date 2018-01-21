@@ -8,7 +8,6 @@ jest.mock('react-router-dom', () => ({
 }));
 
 jest.mock('../components/Header', () => 'div');
-jest.mock('../components/Focus', () => () => true);
 jest.mock('../scenes/Profile', () => () => true);
 jest.mock('../scenes/Blog', () => () => true);
 jest.mock('../scenes/Contact', () => () => true);

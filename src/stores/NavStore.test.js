@@ -29,20 +29,10 @@ describe('Nav Store', () => {
     });
 
     it('should set the navItems property', () => {
-      expect(NavStore.navItems).toEqual([
-        {
-          name: 'Profile',
-          href: '/profile'
-        },
-        {
-          name: 'Blog',
-          href: '/blog'
-        },
-        {
-          name: 'Projects',
-          href: '/projects'
-        }
-      ]);
+      NavStore.navItems.forEach(item => {
+        expect(Object.keys(item).includes('name')).toEqual(true);
+        expect(Object.keys(item).includes('href')).toEqual(true);
+      });
     });
   });
 

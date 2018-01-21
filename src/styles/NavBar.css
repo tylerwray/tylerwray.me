@@ -28,7 +28,7 @@
 
 .Nav-item {
   color: white;
-  padding: 0 50px;
+  padding: 5px 50px;
 }
 
 a.Name:focus,
@@ -38,13 +38,14 @@ a.Nav-item:focus {
 }
 
 @media (hover: hover) {
-  .Name:hover {
-    text-decoration: none;
+  a.Nav-item:hover {
+    background-color: var(--dark-primary-color);
+    border-radius: 2px;
   }
 
   a.Name:hover,
   a.Nav-item:hover {
-    color: lightgray;
+    color: white;
     text-decoration: none;
   }
 }

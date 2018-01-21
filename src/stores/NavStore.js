@@ -10,16 +10,16 @@ class NavStore extends EventEmitter {
     this.isSideNavOpen = false;
     this.navItems = [
       {
-        name: 'Profile',
-        href: '/profile'
-      },
-      {
         name: 'Blog',
         href: '/blog'
       },
       {
         name: 'Projects',
         href: '/projects'
+      },
+      {
+        name: 'Contact',
+        href: '/contact'
       }
     ];
   }

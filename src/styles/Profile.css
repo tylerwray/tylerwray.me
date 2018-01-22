@@ -2,6 +2,34 @@
   position: relative;
 }
 
-.Card {
-  margin: 10px;
+.Sports {
+  background-image: url('../images/football-happy.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+}
+
+.School {
+  background-image: url('../images/football-happy.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+}
+
+.Family {
+  background-image: url('../images/football-happy.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
+}
+
+.Software {
+  background-image: url('../images/football-happy.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  height: 200px;
+  width: 200px;
 }

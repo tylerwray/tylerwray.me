@@ -18,11 +18,11 @@
   color: var(--secondary-text-color);
   font-size: large;
   font-weight: lighter;
-  padding: 0 45px;
+  padding: 0 25px;
 }
 
 .Statement {
-  padding: 3px;
+  padding: 5px;
 }
 
 .Emphasis {

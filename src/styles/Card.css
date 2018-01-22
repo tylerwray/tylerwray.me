@@ -1,0 +1,9 @@
+.Card {
+  margin: 10px;
+  box-shadow: 0px 0px 30px 2px var(--box-shadow-color);
+}
+
+.Card > * {
+  max-width: 100%;
+  max-height: 100%;
+}

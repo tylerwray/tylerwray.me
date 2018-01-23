@@ -15,6 +15,22 @@
   overflow: hidden;
   transform: skewY(4deg);
   transform-origin: 100%;
+  transition: all 150ms cubic-bezier(0.26, 0.62, 0.69, 0.2);
+  box-shadow: 0px 0px 30px 2px var(--box-shadow-color);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: all 150ms cubic-bezier(0.26, 0.62, 0.69, 0.2);
+}
+
+.sticky > .Header-background {
+  transform: skewY(0deg);
+  max-height: 0px;
+  min-height: 0px;
 }
 
 @media only screen and (max-width: 768px) {

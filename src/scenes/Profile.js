@@ -19,7 +19,7 @@ const profileRowStyle = {
 const Profile = () => (
   <div className="Profile">
     <Focus />
-    <Grid style={{ 'max-width': '800px' }}>
+    <Grid style={{ maxWidth: '800px' }}>
       <Row style={profileRowStyle}>
         <Col xs={12}>
           <Card>

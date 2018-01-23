@@ -11,15 +11,11 @@ class NavStore extends EventEmitter {
     this.navItems = [
       {
         name: 'Projects',
-        href: '/projects'
+        href: 'https://github.com/wraytw?utf8=%E2%9C%93&tab=repositories&q=&type=public&language='
       },
       {
         name: 'Blog',
-        href: '/blog'
-      },
-      {
-        name: 'Contact',
-        href: '/contact'
+        href: 'https://medium.com/@wraytw'
       }
     ];
   }

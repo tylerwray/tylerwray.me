@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 
 import '../styles/SideNav.css';
 
@@ -9,7 +8,7 @@ const SideNav = ({ open, navItems, closeSideNav }) => (
     <div className="SideNav-overlay" open={open} onClick={closeSideNav}></div>
     <div className="SideNav" open={open}>
       {navItems.map((item, key) =>
-        <Link key={key} className="SideNav-Item" onClick={closeSideNav} to={item.href}>{item.name}</Link>
+        <a key={key} className="SideNav-Item" onClick={closeSideNav} href={item.href}>{item.name}</a>
       )}
     </div>
   </div>

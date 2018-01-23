@@ -4,7 +4,6 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Header from '../components/Header';
 import Profile from '../scenes/Profile';
-import Blog from '../scenes/Blog';
 import Projects from '../scenes/Projects';
 import Contact from '../scenes/Contact';
 import Footer from '../components/Footer';
@@ -17,7 +16,6 @@ const App = () => (
       <div className="App">
         <Header />
         <Route exact={true} path="/" component={Profile} />
-        <Route exact={true} path="/blog" component={Blog} />
         <Route exact={true} path="/projects" component={Projects} />
         <Route exact={true} path="/contact" component={Contact} />
         <Footer />

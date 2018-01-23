@@ -16,10 +16,10 @@
 
 .Mission-statement {
   color: var(--secondary-text-color);
-  font-size: large;
+  font-size: 21px;
   font-weight: lighter;
   padding: 0 25px;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
 }
 

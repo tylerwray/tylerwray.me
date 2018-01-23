@@ -22,7 +22,7 @@ const Profile = () => (
     <Grid style={{ maxWidth: '800px' }}>
       <Row style={profileRowStyle}>
         <Col xs={12}>
-          <Card>
+          <Card zDepth={4}>
             <CardMedia overlay={<CardTitle title="Family" subtitle="My family is the most important part of my life" />}>
               <img src={family} alt="family" />
             </CardMedia>
@@ -31,7 +31,7 @@ const Profile = () => (
       </Row>
       <Row style={profileRowStyle}>
         <Col xs={12}>
-          <Card>
+          <Card zDepth={4}>
             <CardMedia overlay={<CardTitle title="Software" subtitle="I fell in love with software early in college, and continue to hone my skills" />}>
               <img src={software} alt="software" />
             </CardMedia>
@@ -40,16 +40,16 @@ const Profile = () => (
       </Row>
       <Row style={profileRowStyle}>
         <Col xs={12}>
-          <Card>
+          <Card zDepth={4}>
             <CardMedia overlay={<CardTitle title="School" subtitle="Education is very important to me. I currently attend Utah Valley University" />}>
-              <img style={{ padding: '10px' }} src={uvu} alt="school" />
+              <img style={{ padding: '10px 10px 60px 10px' }} src={uvu} alt="school" />
             </CardMedia>
           </Card>
         </Col>
       </Row>
       <Row style={profileRowStyle}>
         <Col xs={12}>
-          <Card>
+          <Card zDepth={4}>
             <CardMedia overlay={<CardTitle title="Sports" subtitle="Athletics has always been a big part of my life" />}>
               <img src={football} alt="football" />
             </CardMedia>

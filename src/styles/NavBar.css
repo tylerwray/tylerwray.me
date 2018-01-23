@@ -6,20 +6,17 @@
 }
 
 .Name {
-  font-size: 1.5em;
+  font-size: 31px;
+  color: white;
   text-align: left;
 }
 
-.Name {
-  color: white;
-}
-
 .First-name {
-  font-weight: 300;
+  font-weight: 100;
 }
 
 .Last-name {
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .Pages {
@@ -28,6 +25,8 @@
 
 .Nav-item {
   color: white;
+  font-size: 18px;
+  font-weight: lighter;
   padding: 5px 50px;
 }
 

@@ -7,6 +7,7 @@ import Profile from '../scenes/Profile';
 import Blog from '../scenes/Blog';
 import Projects from '../scenes/Projects';
 import Contact from '../scenes/Contact';
+import Footer from '../components/Footer';
 
 import '../styles/App.css';
 
@@ -19,6 +20,7 @@ const App = () => (
         <Route exact={true} path="/blog" component={Blog} />
         <Route exact={true} path="/projects" component={Projects} />
         <Route exact={true} path="/contact" component={Contact} />
+        <Footer />
       </div>
     </Router>
   </MuiThemeProvider>

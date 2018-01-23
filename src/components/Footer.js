@@ -22,7 +22,7 @@ const Footer = () => (
           <div><div style={label}>Github</div><a href="https://github.com/wraytw" rel="noopener noreferrer" target="_blank">wraytw</a></div>
           <div><div style={label}>Twitter</div><a href="https://twitter.com/wray_tw" rel="noopener noreferrer" target="_blank">@wray_tw</a></div>
           <div><div style={label}>Facebook</div><a href="https://www.facebook.com/wraytw" rel="noopener noreferrer" target="_blank">Tyler James Wray</a></div>
-          <div><div style={label}>LinkedIn</div><a href="https://www.linkedin.com/in/tyler-james-wray-55598b89/" rel="noopener noreferrer" target="_blank">Tyler James Wray</a></div>
+          <div><div style={label}>LinkedIn</div><a href="https://www.linkedin.com/in/wraytw/" rel="noopener noreferrer" target="_blank">Tyler James Wray</a></div>
         </Col>
       </Row>
       <div style={{ marginTop: '30px' }}></div>

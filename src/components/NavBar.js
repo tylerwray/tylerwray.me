@@ -51,7 +51,7 @@ class NavBar extends Component {
       <div>
         <SideNav open={this.state.isSideNavOpen} navItems={this.state.navItems} closeSideNav={this.closeSideNav} />
         <Grid className="Nav">
-          <Row>
+          <Row className="text-center">
             <Col xs={2} smHidden mdHidden lgHidden>
               <Hamburger onClick={this.toggleSideNav} open={this.state.isSideNavOpen} />
             </Col>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import Header from '../components/Header';
 import Profile from '../scenes/Profile';
@@ -10,15 +11,17 @@ import Contact from '../scenes/Contact';
 import '../styles/App.css';
 
 const App = () => (
-  <Router>
-    <div className="App">
-      <Header />
-      <Route exact={true} path="/" component={Profile} />
-      <Route exact={true} path="/blog" component={Blog} />
-      <Route exact={true} path="/projects" component={Projects} />
-      <Route exact={true} path="/contact" component={Contact} />
-    </div>
-  </Router>
+  <MuiThemeProvider>
+    <Router>
+      <div className="App">
+        <Header />
+        <Route exact={true} path="/" component={Profile} />
+        <Route exact={true} path="/blog" component={Blog} />
+        <Route exact={true} path="/projects" component={Projects} />
+        <Route exact={true} path="/contact" component={Contact} />
+      </div>
+    </Router>
+  </MuiThemeProvider>
 );
 
 export default App;

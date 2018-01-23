@@ -19,6 +19,8 @@
   font-size: large;
   font-weight: lighter;
   padding: 0 25px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .Statement {

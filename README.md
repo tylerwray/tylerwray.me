@@ -1,4 +1,5 @@
-![build status](https://api.travis-ci.org/wraytw/tyler.me.svg?branch=master)
-![Coverage Status](https://coveralls.io/repos/github/wraytw/tyler.me/badge.svg)
+![build status](https://api.travis-ci.org/wraytw/tylerwray.me.svg?branch=master)
+![Coverage Status](https://coveralls.io/repos/github/wraytw/tylerwray.me/badge.svg)
+![Dependancies](https://david-dm.org/wraytw/tylerwray.me.svg)
 
-# tyler.me
+# tylerwray.me

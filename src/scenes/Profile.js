@@ -8,7 +8,7 @@ import Col from 'react-bootstrap/lib/Col';
 import football from '../images/football-happy.jpg';
 import uvu from '../images/uvu_emblem.png';
 import family from '../images/family.jpg';
-import software from '../images/elec-board.jpg';
+import code from '../images/code.jpg';
 
 import '../styles/Profile.css';
 
@@ -33,7 +33,7 @@ const Profile = () => (
         <Col xs={12}>
           <Card zDepth={4}>
             <CardMedia overlay={<CardTitle title="Software" subtitle="I fell in love with software early in college, and continue to hone my skills" />}>
-              <img src={software} alt="software" />
+              <img src={code} alt="software" />
             </CardMedia>
           </Card>
         </Col>

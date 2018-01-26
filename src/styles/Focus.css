@@ -17,7 +17,7 @@
 .Mission-statement {
   color: var(--secondary-text-color);
   font-size: 21px;
-  font-weight: lighter;
+  font-weight: 300;
   padding: 0 25px;
   max-width: 700px;
   margin: 0 auto;
@@ -28,5 +28,5 @@
 }
 
 .Emphasis {
-  font-weight: bold;
+  font-weight: 700;
 }

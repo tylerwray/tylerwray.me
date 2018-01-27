@@ -8,4 +8,8 @@ describe('Constants', () => {
   it('should export CLOSE_SIDE_NAV', () => {
     expect(constants.CLOSE_SIDE_NAV).toEqual('CLOSE_SIDE_NAV');
   });
+
+  it('should export GET_REPOS', () => {
+    expect(constants.GET_REPOS).toEqual('GET_REPOS');
+  });
 });

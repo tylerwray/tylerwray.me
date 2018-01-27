@@ -5,7 +5,7 @@ import Col from 'react-bootstrap/lib/Col';
 import { Link } from 'react-router-dom';
 
 import NavStore from '../stores/NavStore';
-import NavActions from '../actions/NavActions';
+import NavAction from '../actions/NavAction';
 import dispatcher from '../dispatcher';
 
 import SideNav from './SideNav';
@@ -17,7 +17,7 @@ class NavBar extends Component {
   constructor(props) {
     super(props);
 
-    this.navActions = new NavActions(dispatcher);
+    this.navAction = new NavAction(dispatcher);
 
     this.toggleSideNav = this.toggleSideNav.bind(this);
     this.closeSideNav = this.closeSideNav.bind(this);
@@ -36,14 +36,14 @@ class NavBar extends Component {
 
   toggleSideNav() {
     if (this.state.isSideNavOpen) {
-      this.navActions.closeSideNav();
+      this.navAction.closeSideNav();
     } else {
-      this.navActions.openSideNav();
+      this.navAction.openSideNav();
     }
   }
 
   closeSideNav() {
-    this.navActions.closeSideNav();
+    this.navAction.closeSideNav();
   }
 
   render() {

@@ -52,6 +52,7 @@ describe('Nav Store', () => {
 
       // STUPID JEST: This is how to test if a spy was NOT called
       expect(NavStore.openSideNav.mock.calls).toEqual([]);
+      expect(NavStore.closeSideNav.mock.calls).toEqual([]);
     });
 
     it('should call openSideNav if OPEN_SIDE_NAV is the type of action', () => {

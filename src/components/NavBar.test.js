@@ -20,8 +20,8 @@ jest.mock('../stores/NavStore', () => ({
     fn();
   }
 }));
-jest.mock('../actions/NavActions', () =>
-  function mockNavActions() {
+jest.mock('../actions/NavAction', () =>
+  function mockNavAction() {
     return {
       openSideNavCalled: false,
       openSideNav() {
@@ -45,10 +45,10 @@ describe('Nav Bar', () => {
   });
 
   describe('#constructor', () => {
-    it('should create a local NavActions instance', () => {
+    it('should create a local NavAction instance', () => {
       const instance = new NavBar();
 
-      expect(Object.keys(instance.navActions)).toEqual(['openSideNavCalled', 'openSideNav', 'closeSideNavCalled', 'closeSideNav']);
+      expect(Object.keys(instance.navAction)).toEqual(['openSideNavCalled', 'openSideNav', 'closeSideNavCalled', 'closeSideNav']);
     });
 
     it('should set the component state', () => {
@@ -73,8 +73,8 @@ describe('Nav Bar', () => {
 
         instance.toggleSideNav();
 
-        expect(instance.navActions.closeSideNavCalled).toEqual(true);
-        instance.navActions.closeSideNavCalled = false;
+        expect(instance.navAction.closeSideNavCalled).toEqual(true);
+        instance.navAction.closeSideNavCalled = false;
       });
     });
 
@@ -85,8 +85,8 @@ describe('Nav Bar', () => {
         instance.state.isSideNavOpen = false;
         instance.toggleSideNav();
 
-        expect(instance.navActions.openSideNavCalled).toEqual(true);
-        instance.navActions.openSideNavCalled = false;
+        expect(instance.navAction.openSideNavCalled).toEqual(true);
+        instance.navAction.openSideNavCalled = false;
       });
     });
   });
@@ -97,8 +97,8 @@ describe('Nav Bar', () => {
 
       instance.closeSideNav();
 
-      expect(instance.navActions.closeSideNavCalled).toEqual(true);
-      instance.navActions.closeSideNavCalled = false;
+      expect(instance.navAction.closeSideNavCalled).toEqual(true);
+      instance.navAction.closeSideNavCalled = false;
     });
   });
 });

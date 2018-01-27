@@ -1,6 +1,6 @@
 import { OPEN_SIDE_NAV, CLOSE_SIDE_NAV } from '../constants';
 
-class NavActions {
+class NavAction {
   constructor(dispatcher) {
     this.dispatcher = dispatcher;
   }
@@ -18,4 +18,4 @@ class NavActions {
   }
 }
 
-export default NavActions;
+export default NavAction;

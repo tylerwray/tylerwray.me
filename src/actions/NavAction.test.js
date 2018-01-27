@@ -1,7 +1,7 @@
-import NavActions from './NavActions';
+import NavAction from './NavAction';
 import { OPEN_SIDE_NAV, CLOSE_SIDE_NAV } from '../constants';
 
-describe('Nav Actions', () => {
+describe('Nav Action', () => {
   const dispatchSpy = {
     called: false,
     args: null,
@@ -18,20 +18,20 @@ describe('Nav Actions', () => {
 
   describe('#constructor', () => {
     it('should set the class dispatcher to the injected dispatcher', () => {
-      const navActions = new NavActions(dispatchSpy);
-      expect(navActions.dispatcher).toEqual(dispatchSpy);
+      const navAction = new NavAction(dispatchSpy);
+      expect(navAction.dispatcher).toEqual(dispatchSpy);
     });
   });
 
   describe('#openSideNav', () => {
-    let navActions = null;
+    let navAction = null;
 
     beforeEach(() => {
-      navActions = new NavActions(dispatchSpy);
+      navAction = new NavAction(dispatchSpy);
     });
 
     it('should dispatch an action message telling the side nav to open', () => {
-      navActions.openSideNav();
+      navAction.openSideNav();
 
       expect(dispatchSpy.called).toEqual(true);
       expect(dispatchSpy.args).toEqual({
@@ -41,14 +41,14 @@ describe('Nav Actions', () => {
   });
 
   describe('#closeSideNav', () => {
-    let navActions = null;
+    let navAction = null;
 
     beforeEach(() => {
-      navActions = new NavActions(dispatchSpy);
+      navAction = new NavAction(dispatchSpy);
     });
 
     it('should dispatch an action message telling the side nav to open', () => {
-      navActions.closeSideNav();
+      navAction.closeSideNav();
 
       expect(dispatchSpy.called).toEqual(true);
       expect(dispatchSpy.args).toEqual({

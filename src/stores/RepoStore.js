@@ -23,9 +23,19 @@ class RepoStore extends EventEmitter {
 
   getRepos() {
     axios.get('https://api.github.com/users/wraytw/repos').then(repos => {
+      this.repos = repos.map(this.transformRepo);
       this.emit('change');
-      this.repos = repos;
     });
+  }
+
+  transformRepo(repo) {
+    return {
+      name: repo.name,
+      description: repo.description,
+      url: repo.url,
+      language: repo.language,
+      updated_at: repo.updated_at
+    };
   }
 }
 

@@ -44,21 +44,6 @@ describe('Repository Store', () => {
     });
   });
 
-  describe('#getRepos', () => {
-    it('should set the instance property repos to the fetched repos', async () => {
-      await RepoStore.getRepos();
-
-      expect(RepoStore.repos).toEqual(reposFixture);
-    });
-
-    it('should emit a change event', async () => {
-      await RepoStore.getRepos();
-
-      expect(RepoStore.emit.called).toEqual(true);
-      expect(RepoStore.emit.event).toEqual('change');
-    });
-  });
-
   describe('#handleActions', () => {
     beforeEach(() => {
       jest.spyOn(RepoStore, 'getRepos');
@@ -79,6 +64,53 @@ describe('Repository Store', () => {
       RepoStore.handleActions({ type: GET_REPOS });
 
       expect(RepoStore.getRepos).toHaveBeenCalled();
+    });
+  });
+
+  describe('#getRepos', () => {
+    beforeEach(() => {
+      jest.spyOn(RepoStore, 'transformRepo');
+    });
+
+    afterEach(() => {
+      RepoStore.transformRepo.mockRestore();
+    });
+
+    it('should map the returned repos into a simple format', async () => {
+      await RepoStore.getRepos();
+
+      expect(RepoStore.transformRepo).toHaveBeenCalled();
+    });
+
+    it('should set the instance property repos to the fetched repos', async () => {
+      await RepoStore.getRepos();
+
+      expect(RepoStore.repos).not.toBe(repoDefault);
+    });
+
+    it('should emit a change event', async () => {
+      await RepoStore.getRepos();
+
+      expect(RepoStore.emit.called).toEqual(true);
+      expect(RepoStore.emit.event).toEqual('change');
+    });
+  });
+
+  describe('#transformRepo', () => {
+    const expectedTransformed = {
+      name: 'bookmarker',
+      description: 'CakePHP bookmarker application',
+      url: 'https://api.github.com/repos/wraytw/bookmarker',
+      language: 'PHP',
+      updated_at: '2017-04-21T04:31:51Z'
+    };
+
+    const [mockRepo] = reposFixture;
+
+    it('should return a transformed repo object', () => {
+      const transformed = RepoStore.transformRepo(mockRepo);
+
+      expect(transformed).toEqual(expectedTransformed);
     });
   });
 });

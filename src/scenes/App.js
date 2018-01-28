@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import Header from '../components/Header';
 import Profile from '../scenes/Profile';
@@ -10,8 +11,14 @@ import Footer from '../components/Footer';
 
 import '../styles/App.css';
 
+const muiTheme = getMuiTheme({
+  flatButton: {
+    primaryTextColor: 'var(--link-color)'
+  }
+});
+
 const App = () => (
-  <MuiThemeProvider>
+  <MuiThemeProvider muiTheme={muiTheme}>
     <Router>
       <div className="App">
         <Header />

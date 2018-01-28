@@ -105,7 +105,7 @@ describe('Repository Store', () => {
       updated_at: '2017-04-21T04:31:51Z'
     };
 
-    const [mockRepo] = reposFixture;
+    const [mockRepo] = reposFixture.data;
 
     it('should return a transformed repo object', () => {
       const transformed = RepoStore.transformRepo(mockRepo);

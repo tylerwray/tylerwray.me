@@ -63,9 +63,13 @@ class NavBar extends Component {
               </Link>
             </Col>
             <Col className="Pages" sm={8} xsHidden>
-              {NavStore.navItems.map((item, key) => (
-                <a key={key} className="Nav-item" href={item.href}>{item.name}</a>
-              ))}
+              {NavStore.navItems.map((item, key) => {
+                if (item.external) {
+                  return <a key={key} className="Nav-item" href={item.href}>{item.name}</a>;
+                }
+
+                return <Link key={key} className="Nav-item" to={item.href}>{item.name}</Link>;
+              })}
             </Col>
           </Row>
         </Grid>

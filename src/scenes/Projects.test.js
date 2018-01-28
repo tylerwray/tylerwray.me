@@ -1,7 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+
 import Projects from './Projects';
 
+jest.mock('material-ui/Card', () => ({
+  Card: () => '<div></div>',
+  CardTitle: () => '<div></div>'
+}));
 jest.mock('../actions/RepoAction', () =>
   function mockRepoAction() {
     return {
@@ -10,13 +15,7 @@ jest.mock('../actions/RepoAction', () =>
   }
 );
 jest.mock('../stores/RepoStore', () => ({
-  isSideNavOpen: true,
-  navItems: [
-    {
-      name: 'test',
-      href: 'http://test.com'
-    }
-  ],
+  repos: [],
   on(event, fn) {
     fn();
   }

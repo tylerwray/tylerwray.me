@@ -32,6 +32,7 @@ describe('Nav Store', () => {
       NavStore.navItems.forEach(item => {
         expect(Object.keys(item).includes('name')).toEqual(true);
         expect(Object.keys(item).includes('href')).toEqual(true);
+        expect(Object.keys(item).includes('external')).toEqual(true);
       });
     });
   });

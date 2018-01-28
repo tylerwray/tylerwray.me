@@ -10,7 +10,13 @@ import Twitter from '../images/twitter.svg.js';
 import Facebook from '../images/facebook.svg.js';
 import Linkedin from '../images/linkedin.svg.js';
 
-import '../styles/Footer.css';
+const footerStyle = {
+  minHeight: '100px',
+  width: '100%',
+  backgroundColor: '#424242',
+  color: '#FFFFFF',
+  padding: '15px 25px'
+};
 
 const iconStyle = {
   height: '30px',
@@ -20,7 +26,7 @@ const iconStyle = {
 };
 
 const Footer = () => (
-  <div className="Footer">
+  <div style={footerStyle}>
     <Grid>
       <Row style={{ maxWidth: '700px' }}>
         <Col xs={12} sm={6} md={4}>

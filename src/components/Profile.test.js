@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Profile from './Profile';
 
-jest.mock('../components/Focus', () => () => true);
+jest.mock('./Focus', () => () => true);
 jest.mock('material-ui/Card', () => ({
   Card: () => true,
   CardMedia: () => true,

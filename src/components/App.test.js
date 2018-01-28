@@ -7,13 +7,13 @@ jest.mock('react-router-dom', () => ({
   Route: () => true
 }));
 
-jest.mock('../components/Header', () => 'div');
-jest.mock('../scenes/Profile', () => () => true);
-jest.mock('../scenes/Blog', () => () => true);
-jest.mock('../scenes/Contact', () => () => true);
+jest.mock('./Header', () => 'div');
+jest.mock('./Profile', () => () => true);
+jest.mock('./Blog', () => () => true);
+jest.mock('./Contact', () => () => true);
+jest.mock('./Footer', () => () => true);
 
 it('App renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<App />, div);
-  expect(div.children[0].classList[0]).toBe('App');
 });

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardTitle, CardActions } from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
-
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
@@ -11,7 +10,15 @@ import RepoStore from '../stores/RepoStore';
 import dispatcher from '../dispatcher';
 
 import Github from '../images/github.svg';
-import '../styles/Projects.css';
+
+const projectsStyle = {
+  position: 'relative',
+  marginTop: '50px'
+};
+
+const repoStyle = {
+  minHeight: '200px'
+};
 
 class Projects extends Component {
   constructor(props) {
@@ -34,11 +41,11 @@ class Projects extends Component {
   render() {
     if (this.state.repos.length === 0) {
       return (
-        <div className="Projects">
+        <div style={projectsStyle}>
           <Grid>
             <Row>
-              {[1, 2, 3, 4, 5, 5, 6, 6, 5, 4].map((__, key) => (
-                <Col className="Repo" key={key} xs={12} sm={6} md={4}>
+              {[...Array(12)].map((__, key) => (
+                <Col style={repoStyle} key={key} xs={12} sm={6} md={4}>
                   <Card style={{ backgroundColor: '#E0E0E0', height: '150px' }}>
                   </Card>
                 </Col>
@@ -50,11 +57,11 @@ class Projects extends Component {
     }
 
     return (
-      <div className="Projects">
+      <div style={projectsStyle}>
         <Grid>
           <Row>
             {this.state.repos.map((repo, key) => (
-              <Col className="Repo" key={key} xs={12} sm={6} md={4}>
+              <Col style={repoStyle} key={key} xs={12} sm={6} md={4}>
                 <Card>
                   <CardTitle>
                     <h4>{repo.name}</h4>

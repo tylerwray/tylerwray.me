@@ -1,23 +1,22 @@
 import React from 'react';
 import { Card, CardMedia, CardTitle } from 'material-ui/Card';
-
-import Focus from '../components/Focus';
 import Grid from 'react-bootstrap/lib/Grid';
 import Row from 'react-bootstrap/lib/Row';
 import Col from 'react-bootstrap/lib/Col';
+
 import football from '../images/football-happy.jpg';
 import uvu from '../images/uvu_emblem.png';
 import family from '../images/family.jpg';
 import code from '../images/code.jpg';
 
-import '../styles/Profile.css';
+import Focus from './Focus';
 
 const profileRowStyle = {
   margin: '25px 10px'
 };
 
 const Profile = () => (
-  <div className="Profile">
+  <div style={{ position: 'relative' }}>
     <Focus />
     <Grid style={{ maxWidth: '800px' }}>
       <Row style={profileRowStyle}>

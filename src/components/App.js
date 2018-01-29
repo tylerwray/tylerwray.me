@@ -11,7 +11,8 @@ import Footer from './Footer';
 
 const muiTheme = getMuiTheme({
   flatButton: {
-    primaryTextColor: 'var(--link-color)'
+    primaryTextColor: 'var(--link-color)',
+    secondaryTextColor: '#FFE082'
   }
 });
 

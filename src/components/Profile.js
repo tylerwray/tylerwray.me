@@ -22,36 +22,40 @@ const Profile = () => (
       <Row style={profileRowStyle}>
         <Col xs={12}>
           <Card zDepth={4}>
-            <CardMedia overlay={<CardTitle title="Family" subtitle="My family is the most important part of my life" />}>
+            <CardMedia>
               <img src={family} alt="family" />
             </CardMedia>
+            <CardTitle title="Family" subtitle="My family is the most important part of my life" />
           </Card>
         </Col>
       </Row>
       <Row style={profileRowStyle}>
         <Col xs={12}>
           <Card zDepth={4}>
-            <CardMedia overlay={<CardTitle title="Software" subtitle="I fell in love with software early in college, and continue to hone my skills" />}>
+            <CardMedia>
               <img src={code} alt="software" />
             </CardMedia>
+            <CardTitle title="Software" subtitle="I fell in love with software early in college, and continue to hone my skills" />
           </Card>
         </Col>
       </Row>
       <Row style={profileRowStyle}>
         <Col xs={12}>
           <Card zDepth={4}>
-            <CardMedia overlay={<CardTitle title="School" subtitle="Education is very important to me. I currently attend Utah Valley University" />}>
-              <img style={{ padding: '10px 10px 60px 10px' }} src={uvu} alt="school" />
+            <CardMedia>
+              <img style={{ padding: '10px', backgroundColor: '#EEEEEE' }} src={uvu} alt="school" />
             </CardMedia>
+            <CardTitle title="School" subtitle="Education is very important to me. I currently attend Utah Valley University" />
           </Card>
         </Col>
       </Row>
       <Row style={profileRowStyle}>
         <Col xs={12}>
           <Card zDepth={4}>
-            <CardMedia overlay={<CardTitle title="Sports" subtitle="Athletics has always been a big part of my life" />}>
+            <CardMedia>
               <img src={football} alt="football" />
             </CardMedia>
+            <CardTitle title="Sports" subtitle="Athletics has always been a big part of my life" />
           </Card>
         </Col>
       </Row>

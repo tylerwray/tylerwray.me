@@ -35,7 +35,6 @@ const Footer = () => (
     <Grid>
       <Row style={{ maxWidth: '700px' }}>
         <Col xs={12} sm={6}>
-          <h4>Contact</h4>
           <Row>
             <Col xs={12} md={6}>
               <FlatButton

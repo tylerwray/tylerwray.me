@@ -8,4 +8,4 @@ notifications:
 script:
   - yarn coverage --coverageReporters=text-lcov
 after_script: # Upload coverage reports
-  - COVERALLS_REPO_TOKEN=$coveralls_repo_token yarn coveralls
+  - yarn coveralls

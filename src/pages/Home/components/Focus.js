@@ -1,51 +1,61 @@
 import React from 'react'
 
+import PropTypes from 'prop-types'
+
+import { withStyles } from '@material-ui/core/styles'
+import Typography from '@material-ui/core/Typography'
+
 import camel from '../media/images/camel.jpg'
 
-const focusStyle = {
-  marginBottom: '20px'
+function styles(theme) {
+  return {
+    focusStyle: {
+      marginBottom: theme.spacing.unit * 3
+    },
+    portraitStyle: {
+      height: 250,
+      width: 250,
+      borderRadius: '50%',
+      backgroundColor: theme.palette.grey[400],
+      backgroundImage: `url(${camel})`,
+      backgroundPosition: 'center',
+      backgroundSize: '100%',
+      margin: '25px auto',
+      boxShadow: theme.shadows[15]
+    },
+    missionStatementStyle: {
+      padding: '0 25px',
+      maxWidth: theme.breakpoints.values.sm,
+      margin: '0 auto'
+    },
+    statementStyle: {
+      fontWeight: theme.typography.fontWeightLight,
+      fontSize: theme.typography.title.fontSize,
+      padding: theme.spacing.unit
+    },
+    emphasisStyle: {
+      fontWeight: theme.typography.fontWeightMedium
+    }
+  }
 }
 
-const portraitStyle = {
-  height: '250px',
-  width: '250px',
-  borderRadius: '50%',
-  backgroundColor: 'var(--box-shadow-color)',
-  backgroundImage: `url(${camel})`,
-  backgroundPosition: 'center',
-  backgroundSize: '100%',
-  margin: '25px auto',
-  boxShadow: '0px 0px 30px 2px var(--box-shadow-color)'
-}
-
-const missionStatementStyle = {
-  color: 'var(--secondary-text-color)',
-  fontSize: '21px',
-  fontWeight: '300',
-  padding: '0 25px',
-  maxWidth: '700px',
-  margin: '0 auto'
-}
-
-const statementStyle = {
-  padding: '5px'
-}
-
-const emphasisStyle = {
-  fontWeight: 700
-}
-
-const Focus = () => (
-  <div style={focusStyle}>
-    <div style={portraitStyle}></div>
-    <div>
-      <div style={missionStatementStyle}>
-        <div style={statementStyle}>I will work daily to <span style={emphasisStyle}>improve lives</span> of others</div>
-        <div style={statementStyle}>Software I create will be of the <span style={emphasisStyle}>highest quality</span>, and tested thorougly</div>
-        <div style={statementStyle}>People who work with me will recieve <span style={emphasisStyle}>my best self</span> each day</div>
+function Focus({ classes }) {
+  return (
+    <div className={classes.focusStyle}>
+      <div className={classes.portraitStyle}></div>
+      <div>
+        <div className={classes.missionStatementStyle}>
+          <Typography color="textSecondary" className={classes.statementStyle}>I will work daily to <span className={classes.emphasisStyle}>improve lives</span> of others</Typography>
+          <Typography color="textSecondary" className={classes.statementStyle}>Software I create will be of the <span className={classes.emphasisStyle}>highest quality</span>, and tested thorougly</Typography>
+          <Typography color="textSecondary" className={classes.statementStyle}>People who work with me will recieve <span className={classes.emphasisStyle}>my best self</span> each day</Typography>
+        </div>
       </div>
     </div>
-  </div>
-)
+  )
+}
 
-export default Focus
+Focus.propTypes = {
+  classes: PropTypes.object.isRequired
+}
+
+export default withStyles(styles)(Focus)

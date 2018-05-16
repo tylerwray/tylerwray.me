@@ -98,7 +98,13 @@
     "handle-callback-err": "error",
     "id-blacklist": "error",
     "id-match": "error",
-    "indent": ["error", 2],
+    "indent": [
+      "error",
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
     "indent-legacy": "off",
     "init-declarations": "off",
     "jsx-quotes": [
@@ -170,7 +176,14 @@
     "no-multi-assign": "error",
     "no-multi-spaces": "error",
     "no-multi-str": "error",
-    "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 1 , "maxBOF": 0 }],
+    "no-multiple-empty-lines": [
+      "error",
+      {
+        "max": 1,
+        "maxEOF": 1,
+        "maxBOF": 0
+      }
+    ],
     "no-native-reassign": "error",
     "no-negated-condition": "error",
     "no-negated-in-lhs": "error",
@@ -227,7 +240,12 @@
         "minProperties": 3
       }
     ],
-    "object-property-newline": [ "error", { "allowMultiplePropertiesPerLine": true } ],
+    "object-property-newline": [
+      "error",
+      {
+        "allowMultiplePropertiesPerLine": true
+      }
+    ],
     "object-curly-spacing": [
       "error",
       "always"

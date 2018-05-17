@@ -21,7 +21,7 @@ function styles(theme) {
       backgroundPosition: 'center',
       backgroundSize: '100%',
       margin: '25px auto',
-      boxShadow: theme.shadows[15]
+      boxShadow: theme.shadows[5]
     },
     missionStatementStyle: {
       padding: '0 25px',

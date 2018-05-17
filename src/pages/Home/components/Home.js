@@ -15,21 +15,29 @@ import code from '../media/images/code.jpg'
 
 import Focus from './Focus'
 
-const styles = {
-  card: {
-    maxWidth: 625,
-    margin: '0 auto',
-    marginBottom: 15
-  },
-  media: {
-    height: 0,
-    paddingTop: '76.25%'
+function styles(theme) {
+  return {
+    root: {
+      padding: 10
+    },
+    card: {
+      maxWidth: 625,
+      margin: '0 auto',
+      marginBottom: 15
+    },
+    cardSubTitle: {
+      fontSize: theme.typography.fontSize
+    },
+    media: {
+      height: 0,
+      paddingTop: '76.25%'
+    }
   }
 }
 
 function Home({ classes }) {
   return (
-    <Grid container>
+    <Grid container className={classes.root}>
       <Grid item xs={12}>
         <Focus />
       </Grid>
@@ -41,10 +49,10 @@ function Home({ classes }) {
             title="family"
           />
           <CardContent>
-            <Typography variant="title">
+            <Typography gutterBottom variant="headline" component="h2">
               Family
             </Typography>
-            <Typography variant="subheading">
+            <Typography className={classes.cardSubTitle} variant="caption">
               My family is the most important part of my life
             </Typography>
           </CardContent>
@@ -58,10 +66,10 @@ function Home({ classes }) {
             title="software"
           />
           <CardContent>
-            <Typography variant="title">
+            <Typography gutterBottom variant="headline" component="h2">
               Software
             </Typography>
-            <Typography variant="subheading">
+            <Typography className={classes.cardSubTitle} variant="caption">
               I fell in love with software early in college, and continue to hone my skills
             </Typography>
           </CardContent>
@@ -76,10 +84,10 @@ function Home({ classes }) {
             title="school"
           />
           <CardContent>
-            <Typography variant="title">
+            <Typography gutterBottom variant="headline" component="h2">
               School
             </Typography>
-            <Typography variant="subheading">
+            <Typography className={classes.cardSubTitle} variant="caption">
               Education is very important to me. I currently attend Utah Valley University
             </Typography>
           </CardContent>
@@ -93,10 +101,10 @@ function Home({ classes }) {
             title="football"
           />
           <CardContent>
-            <Typography variant="title">
+            <Typography gutterBottom variant="headline" component="h2">
               Sports
             </Typography>
-            <Typography variant="subheading">
+            <Typography className={classes.cardSubTitle} variant="caption">
               Athletics has always been a big part of my life
             </Typography>
           </CardContent>

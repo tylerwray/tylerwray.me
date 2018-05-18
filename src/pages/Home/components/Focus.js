@@ -8,6 +8,8 @@ import Typography from '@material-ui/core/Typography'
 import camel from '../media/images/camel.jpg'
 
 function styles(theme) {
+  console.log(theme)
+
   return {
     focusStyle: {
       marginBottom: theme.spacing.unit * 3

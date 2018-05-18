@@ -23,6 +23,9 @@ function styles(theme) {
   }
 
   return {
+    root: {
+      marginTop: theme.spacing.unit * 2
+    },
     card,
     loaderCard: {
       ...card,
@@ -85,7 +88,7 @@ class Projects extends Component {
     }
 
     return (
-      <Grid container justify="space-around">
+      <Grid className={classes.root} container justify="space-around">
         {renderRepos}
       </Grid>
     )

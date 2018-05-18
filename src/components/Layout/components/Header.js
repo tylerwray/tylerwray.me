@@ -8,9 +8,20 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 
 function styles(theme) {
+  console.log(theme)
+
   return {
     root: {
       flexGrow: 1
+    },
+    appBar: {
+      paddingLeft: 150,
+      paddingRight: 150,
+      background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.light})`,
+      [theme.breakpoints.down('md')]: {
+        paddingLeft: 0,
+        paddingRight: 0
+      }
     },
     flex: {
       flex: 1
@@ -29,6 +40,15 @@ function styles(theme) {
       transitionProperty: 'box-shadow',
       transitionTimingFunction: 'ease-in',
       transitionDuration: '250ms'
+    },
+    name: {
+      fontFamily: 'Satisfy',
+      margin: '0 auto',
+      color: theme.palette.common.white,
+      fontSize: 40,
+      [theme.breakpoints.down('xs')]: {
+        fontSize: 24
+      }
     }
   }
 }
@@ -36,12 +56,13 @@ function styles(theme) {
 function Header({ classes }) {
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className={classes.appBar} position="fixed">
         <Toolbar>
           <Typography variant="title" color="inherit" className={classes.flex}>
             <NavLink to="/" exact={true} className={classes.navLink} activeClassName={classes.activeNavLink}>Home</NavLink>
             <NavLink to="/projects" className={classes.navLink} activeClassName={classes.activeNavLink}>Projects</NavLink>
           </Typography>
+          <Typography className={classes.name}>Tyler Wray</Typography>
         </Toolbar>
       </AppBar>
     </div>

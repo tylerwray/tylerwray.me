@@ -1,13 +1,21 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 
+import { withStyles } from '@material-ui/core/styles'
+
 import Header from './Header'
 
-function Layout({ children }) {
+const styles = {
+  main: {
+    paddingTop: 60
+  }
+}
+
+function Layout({ classes, children }) {
   return (
     <Fragment>
       <Header />
-      <main>
+      <main className={classes.main}>
         {children}
       </main>
     </Fragment>
@@ -15,7 +23,8 @@ function Layout({ children }) {
 }
 
 Layout.propTypes = {
+  classes: PropTypes.object.isRequired,
   children: PropTypes.object.isRequired
 }
 
-export default Layout
+export default withStyles(styles)(Layout)

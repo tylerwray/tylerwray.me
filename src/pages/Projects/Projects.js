@@ -38,9 +38,12 @@ function styles(theme) {
       height: 50
     },
     gitHubIcon: {
-      fill: theme.palette.secondary.light,
+      fill: theme.palette.secondary.main,
       height: 20,
       marginRight: 10
+    },
+    gitHubText: {
+      color: theme.palette.secondary.main
     }
   }
 }
@@ -77,9 +80,9 @@ class Projects extends Component {
               </Typography>
             </CardContent>
             <CardActions>
-              <Button href={repo.url} target="_blank">
+              <Button href={repo.url} color="secondary" target="_blank">
                 <Github className={classes.gitHubIcon} />
-                View on Github
+                <span className={classes.gitHubText}>View on Github</span>
               </Button>
             </CardActions>
           </Card>

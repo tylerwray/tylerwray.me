@@ -53,7 +53,8 @@ function Home({ classes }) {
               Family
             </Typography>
             <Typography className={classes.cardSubTitle} variant="caption">
-              My family is the most important part of my life
+              My family is the most important part of my life.
+              Being a father and husband has been extremely rewarding
             </Typography>
           </CardContent>
         </Card>
@@ -88,7 +89,7 @@ function Home({ classes }) {
               School
             </Typography>
             <Typography className={classes.cardSubTitle} variant="caption">
-              Education is very important to me. I currently attend Utah Valley University
+              {'Education is very important to me. I\'m a student at Utah Valley University'}
             </Typography>
           </CardContent>
         </Card>
@@ -105,7 +106,7 @@ function Home({ classes }) {
               Sports
             </Typography>
             <Typography className={classes.cardSubTitle} variant="caption">
-              Athletics has always been a big part of my life
+              {'Athletics has always been a big part of my life. The lessons I learned playing on teams help me throughout my life'}
             </Typography>
           </CardContent>
         </Card>

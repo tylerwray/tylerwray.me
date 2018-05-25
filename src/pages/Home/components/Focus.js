@@ -5,25 +5,23 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import profile from '../media/images/profile.png'
+import camel from '../media/images/camel.jpg'
 
 function styles(theme) {
   return {
     focusStyle: {
       marginBottom: theme.spacing.unit * 3
     },
-    portraitWrapper: {
-      textAlign: 'center'
-    },
-    portrait: {
+    portraitStyle: {
       height: 250,
       width: 250,
       borderRadius: '50%',
-      backgroundColor: 'rgb(89, 145, 191)',
+      backgroundColor: theme.palette.grey[400],
+      backgroundImage: `url(${camel})`,
+      backgroundPosition: 'center',
       backgroundSize: '100%',
       margin: '25px auto',
-      boxShadow: theme.shadows[5],
-      backgroundImage: `url(${profile})`
+      boxShadow: theme.shadows[5]
     },
     missionStatementStyle: {
       padding: '0 25px',
@@ -44,7 +42,7 @@ function styles(theme) {
 function Focus({ classes }) {
   return (
     <div className={classes.focusStyle}>
-      <div className={classes.portrait}></div>
+      <div className={classes.portraitStyle}></div>
       <div>
         <div className={classes.missionStatementStyle}>
           <Typography color="textSecondary" className={classes.statementStyle}>I will work daily to <span className={classes.emphasisStyle}>improve lives</span> of others</Typography>

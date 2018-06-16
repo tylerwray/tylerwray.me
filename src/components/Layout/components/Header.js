@@ -1,58 +1,26 @@
-import React from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
-import { withRouter } from 'react-router'
 
 import { withStyles } from '@material-ui/core/styles'
+import Grid from '@material-ui/core/Grid'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+
+import SideNav from './SideNav'
 
 function styles(theme) {
-  const navActive = {
-    zIndex: -1,
-    height: 37,
-    borderRadius: 5,
-    position: 'relative',
-    paddingTop: 5,
-    paddingBottom: 5,
-    backgroundColor: theme.palette.secondary.main,
-    boxShadow: theme.shadows[14],
-    transition: 'all 250ms'
-  }
-
   return {
     appBar: {
-      flexGrow: 1,
       background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`
     },
-    toolBar: {
-      justifyContent: 'space-between'
-    },
-    flex: {
-      flex: 1
-    },
-    navContainer: {
-      width: 0
-    },
-    navLink: {
-      color: theme.palette.common.white,
-      textDecoration: 'none',
-      padding: theme.spacing.unit,
-      marginRight: theme.spacing.unit
-    },
-    homeNavActive: {
-      ...navActive,
-      right: 183,
-      paddingRight: 75
-    },
-    projectsNavActive: {
-      ...navActive,
-      right: 105,
-      paddingRight: 100
+    menuIcon: {
+      color: 'white',
+      fontSize: 36
     },
     name: {
-      flex: '0 0 auto',
       fontFamily: 'Satisfy, Roboto, Helvetica',
       color: theme.palette.common.white,
       fontSize: 40,
@@ -63,39 +31,41 @@ function styles(theme) {
   }
 }
 
-function Header(props) {
-  const { classes, location } = props
-
-  let activeNavClass = classes.homeNavActive
-
-  switch (location.pathname) {
-    case '/':
-      activeNavClass = classes.homeNavActive
-      break
-    case '/projects':
-      activeNavClass = classes.projectsNavActive
-      break
-    default:
-      break
+class Header extends Component {
+  static propTypes = {
+    classes: PropTypes.object.isRequired
   }
 
-  return (
-    <AppBar className={classes.appBar} position="fixed">
-      <Toolbar className={classes.toolBar}>
-        <Typography component="div" variant="title" color="inherit" className={classes.navContainer}>
-          <NavLink to="/" exact={true} className={classes.navLink} activeClassName={classes.activeNavLink}>Home</NavLink>
-          <NavLink to="/projects" className={classes.navLink} activeClassName={classes.activeNavLink}>Projects</NavLink>
-          <span className={activeNavClass} />
-        </Typography>
-        <Typography className={classes.name}>Tyler Wray</Typography>
-      </Toolbar>
-    </AppBar>
-  )
+  state = {
+    menuOpen: false
+  }
+
+  toggleMenu = () => {
+    this.setState(prevState => ({ menuOpen: !prevState.menuOpen }))
+  }
+
+  render() {
+    const { classes } = this.props
+    const { menuOpen } = this.state
+
+    return (
+      <AppBar className={classes.appBar} position="fixed">
+        <Toolbar className={classes.toolBar}>
+          <Grid container justify="space-between" alignItems="center">
+            <Grid item>
+              <IconButton onClick={this.toggleMenu}>
+                <MenuIcon className={classes.menuIcon} />
+              </IconButton>
+            </Grid>
+            <Grid item>
+              <Typography component="span" className={classes.name}>Tyler Wray</Typography>
+            </Grid>
+          </Grid>
+        </Toolbar>
+        <SideNav open={menuOpen} onClose={this.toggleMenu} />
+      </AppBar>
+    )
+  }
 }
 
-Header.propTypes = {
-  classes: PropTypes.object.isRequired,
-  location: PropTypes.object.isRequired
-}
-
-export default withStyles(styles)(withRouter(Header))
+export default withStyles(styles)(Header)

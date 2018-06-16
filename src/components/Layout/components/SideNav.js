@@ -45,12 +45,13 @@ function styles(theme) {
     sideNavLink: {
       fontFamily: theme.typography.fontFamily,
       fontSize: 16,
+      margin: '10px 10px 10px 0px',
+      borderRadius: '0px 50px 50px 0px',
       textAlign: 'center',
       verticalAlign: 'middle',
       lineHeight: `${SIDE_NAV_LINK_HEIGHT}px`,
       display: 'block',
       height: SIDE_NAV_LINK_HEIGHT,
-      width: '100%',
       '&:hover': {
         backgroundColor: theme.palette.grey[300]
       },
@@ -58,7 +59,12 @@ function styles(theme) {
       color: theme.palette.common.black
     },
     activeSideNavLink: {
-      backgroundColor: theme.palette.grey[300]
+      backgroundColor: theme.palette.primary.lightest,
+      color: theme.palette.primary.darkest,
+      '&:hover': {
+        backgroundColor: theme.palette.primary.lightest,
+        color: theme.palette.primary.darkest
+      }
     }
   }
 }

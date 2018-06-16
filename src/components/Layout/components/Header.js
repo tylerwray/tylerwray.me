@@ -62,7 +62,7 @@ class Header extends Component {
             </Grid>
           </Grid>
         </Toolbar>
-        <SideNav open={menuOpen} onClose={this.toggleMenu} />
+        <SideNav open={true} onClose={this.toggleMenu} />
       </AppBar>
     )
   }

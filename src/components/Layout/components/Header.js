@@ -7,8 +7,10 @@ import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
+import Hidden from '@material-ui/core/Hidden'
 import MenuIcon from '@material-ui/icons/Menu'
 
+import Nav from './Nav'
 import SideNav from './SideNav'
 
 function styles(theme) {
@@ -52,17 +54,24 @@ class Header extends Component {
       <AppBar className={classes.appBar} position="fixed">
         <Toolbar className={classes.toolBar}>
           <Grid container justify="space-between" alignItems="center">
-            <Grid item>
-              <IconButton onClick={this.toggleMenu}>
-                <MenuIcon className={classes.menuIcon} />
-              </IconButton>
-            </Grid>
+            <Hidden mdUp>
+              <Grid item>
+                <IconButton onClick={this.toggleMenu}>
+                  <MenuIcon className={classes.menuIcon} />
+                </IconButton>
+              </Grid>
+            </Hidden>
+            <Hidden smDown>
+              <Nav />
+            </Hidden>
             <Grid item>
               <Typography component="span" className={classes.name}>Tyler Wray</Typography>
             </Grid>
           </Grid>
         </Toolbar>
-        <SideNav open={menuOpen} onClose={this.toggleMenu} />
+        <Hidden mdUp>
+          <SideNav open={menuOpen} onClose={this.toggleMenu} />
+        </Hidden>
       </AppBar>
     )
   }

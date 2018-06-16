@@ -5,6 +5,8 @@ import { NavLink } from 'react-router-dom'
 
 import { withStyles } from '@material-ui/core/styles'
 
+import { NAV_ITEMS } from '../constants'
+
 function styles(theme) {
   console.log(theme)
   const SIDE_NAV_WIDTH = 250
@@ -75,17 +77,6 @@ function SideNav(props) {
     open,
     onClose
   } = props
-
-  const NAV_ITEMS = [
-    {
-      label: 'Home',
-      to: '/'
-    },
-    {
-      label: 'Projects',
-      to: '/projects'
-    }
-  ]
 
   return (
     <Fragment>

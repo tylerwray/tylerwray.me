@@ -102,7 +102,7 @@ function Contact({ classes }) {
     <Grid className={classes.root} container direction="column" alignItems="center">
       <Grid item >
         <Typography className={classes.title}>Hello.</Typography>
-        <Typography className={classes.subTitle}>I use these things to commuicate</Typography>
+        <Typography className={classes.subTitle}>I use these things to communicate</Typography>
       </Grid>
       <Grid item>
         <Card className={classes.contactCard}>

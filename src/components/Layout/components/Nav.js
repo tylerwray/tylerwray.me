@@ -16,7 +16,7 @@ function styles(theme) {
       fontSize: 18,
       marginRight: 15,
       fontFamily: theme.typography.fontFamily,
-      borderRadius: 50,
+      borderRadius: 5,
       color: theme.palette.common.white,
       '&:hover': {
         backgroundColor: theme.palette.secondary.main

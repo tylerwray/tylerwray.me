@@ -6,5 +6,9 @@ export const NAV_ITEMS = [
   {
     label: 'Projects',
     to: '/projects'
+  },
+  {
+    label: 'Contact',
+    to: '/contact'
   }
 ]

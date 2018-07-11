@@ -45,7 +45,7 @@ const Footer = () => (
       style={buttonStyle}
     />
     <Button
-      href={'https://github.com/wraytw'}
+      href={'https://github.com/tylerwray'}
       target="_blank"
       label="Github"
       secondary={true}

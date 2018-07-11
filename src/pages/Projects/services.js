@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export function getRepos() {
   return axios
-    .get('https://api.github.com/users/wraytw/repos')
+    .get('https://api.github.com/users/tylerwray/repos')
     .then(res => res.data.map(repo => ({
       name: repo.name,
       description: repo.description,

@@ -127,7 +127,7 @@ function Contact({ classes }) {
             </Typography>
           </CardContent>
           <CardActions>
-            <Button href="https://github.com/wraytw" target="_blank" className={classes.github} fullWidth>
+            <Button href="https://github.com/tylerwray" target="_blank" className={classes.github} fullWidth>
               <img src={GithubIcon} className={classes.githubIcon} alt="github icon" />
               Github
             </Button>

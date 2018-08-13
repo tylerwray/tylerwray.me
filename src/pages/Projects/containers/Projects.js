@@ -10,10 +10,10 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 
-import Github from './media/images/github.svg'
+import Github from '../media/images/github.svg'
 
-import { selectRepos } from './selectors'
-import { reposRequest } from './actions'
+import { selectRepos } from '../selectors'
+import { reposRequest } from '../actions'
 
 function styles(theme) {
   const card = {
@@ -118,4 +118,7 @@ function mapDispatchToProps(dispatch) {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withStyles(styles)(Projects))
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles)(Projects))

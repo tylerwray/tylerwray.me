@@ -42,12 +42,23 @@ function styles(theme) {
 function Focus({ classes }) {
   return (
     <div className={classes.focusStyle}>
-      <div className={classes.portraitStyle}></div>
+      <div className={classes.portraitStyle} />
       <div>
         <div className={classes.missionStatementStyle}>
-          <Typography color="textSecondary" className={classes.statementStyle}>I will work daily to <span className={classes.emphasisStyle}>improve lives</span> of others</Typography>
-          <Typography color="textSecondary" className={classes.statementStyle}>Software I create will be of the <span className={classes.emphasisStyle}>highest quality</span>, and tested thorougly</Typography>
-          <Typography color="textSecondary" className={classes.statementStyle}>People who work with me will recieve <span className={classes.emphasisStyle}>my best self</span> each day</Typography>
+          <Typography color="textSecondary" className={classes.statementStyle}>
+            I will work daily to{' '}
+            <span className={classes.emphasisStyle}>improve lives</span> of
+            others
+          </Typography>
+          <Typography color="textSecondary" className={classes.statementStyle}>
+            Software I create will be of the{' '}
+            <span className={classes.emphasisStyle}>highest quality</span>, and
+            tested thorougly
+          </Typography>
+          <Typography color="textSecondary" className={classes.statementStyle}>
+            People who work with me will recieve{' '}
+            <span className={classes.emphasisStyle}>my best self</span> each day
+          </Typography>
         </div>
       </div>
     </div>

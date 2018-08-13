@@ -43,35 +43,28 @@ function Home({ classes }) {
       </Grid>
       <Grid item xs={12}>
         <Card className={classes.card}>
-          <CardMedia
-            className={classes.media}
-            image={family}
-            title="family"
-          />
+          <CardMedia className={classes.media} image={family} title="family" />
           <CardContent>
             <Typography gutterBottom variant="headline" component="h2">
               Family
             </Typography>
             <Typography className={classes.cardSubTitle} variant="caption">
-              My family is the most important part of my life.
-              Being a father and husband has been extremely rewarding
+              My family is the most important part of my life. Being a father
+              and husband has been extremely rewarding
             </Typography>
           </CardContent>
         </Card>
       </Grid>
       <Grid item xs={12}>
         <Card className={classes.card}>
-          <CardMedia
-            className={classes.media}
-            image={code}
-            title="software"
-          />
+          <CardMedia className={classes.media} image={code} title="software" />
           <CardContent>
             <Typography gutterBottom variant="headline" component="h2">
               Software
             </Typography>
             <Typography className={classes.cardSubTitle} variant="caption">
-              I fell in love with software early in college, and continue to hone my skills
+              I fell in love with software early in college, and continue to
+              hone my skills
             </Typography>
           </CardContent>
         </Card>
@@ -89,7 +82,9 @@ function Home({ classes }) {
               School
             </Typography>
             <Typography className={classes.cardSubTitle} variant="caption">
-              {'Education is very important to me. I\'m a student at Utah Valley University'}
+              {
+                "Education is very important to me. I'm a student at Utah Valley University"
+              }
             </Typography>
           </CardContent>
         </Card>
@@ -106,7 +101,9 @@ function Home({ classes }) {
               Sports
             </Typography>
             <Typography className={classes.cardSubTitle} variant="caption">
-              {'Athletics has always been a big part of my life. The lessons I learned playing on teams help me throughout my life'}
+              {
+                'Athletics has always been a big part of my life. The lessons I learned playing on teams help me throughout my life'
+              }
             </Typography>
           </CardContent>
         </Card>

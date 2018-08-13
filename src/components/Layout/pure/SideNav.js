@@ -5,10 +5,7 @@ import { NavLink } from 'react-router-dom'
 
 import { withStyles } from '@material-ui/core/styles'
 
-import { NAV_ITEMS } from '../constants'
-
 function styles(theme) {
-  console.log(theme)
   const SIDE_NAV_WIDTH = 250
   const SIDE_NAV_LINK_HEIGHT = 50
 
@@ -71,18 +68,17 @@ function styles(theme) {
   }
 }
 
-function SideNav(props) {
-  const {
-    classes,
-    open,
-    onClose
-  } = props
-
+function SideNav({ classes, items, open, onClose }) {
   return (
     <Fragment>
-      <div onClick={onClose} className={`${classes.overlay} ${open && classes.visible}`} />
-      <div className={`${classes.sideNav} ${open ? classes.open : classes.closed}`}>
-        {NAV_ITEMS.map(x => (
+      <div
+        onClick={onClose}
+        className={`${classes.overlay} ${open && classes.visible}`}
+      />
+      <div
+        className={`${classes.sideNav} ${open ? classes.open : classes.closed}`}
+      >
+        {items.map(x => (
           <NavLink
             key={x.label}
             className={classes.sideNavLink}
@@ -101,6 +97,7 @@ function SideNav(props) {
 
 SideNav.propTypes = {
   classes: PropTypes.object.isRequired,
+  items: PropTypes.arrayOf(PropTypes.object),
   open: PropTypes.bool.isRequired,
   onClose: PropTypes.func.isRequired
 }

@@ -1,5 +1,3 @@
-import Layout from './Layout/components/Layout'
+import Layout from './Layout/containers/Layout'
 
-export {
-  Layout
-}
+export { Layout }

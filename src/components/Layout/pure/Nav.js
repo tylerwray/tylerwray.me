@@ -1,12 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { NavLink } from 'react-router-dom'
-
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
-import { NAV_ITEMS } from '../constants'
+import { NavLink } from 'react-router-dom'
 
 function styles(theme) {
   return {
@@ -29,11 +27,11 @@ function styles(theme) {
   }
 }
 
-function Nav({ classes }) {
+function Nav({ classes, items }) {
   return (
     <Grid item>
       <Grid container>
-        {NAV_ITEMS.map(x => (
+        {items.map(x => (
           <Grid item key={x.label}>
             <NavLink
               key={x.label}
@@ -52,7 +50,8 @@ function Nav({ classes }) {
 }
 
 Nav.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.object.isRequired,
+  items: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default withStyles(styles)(Nav)

@@ -1,4 +1,4 @@
-import { REPOS_REQUEST, REPOS_REQUEST_SUCCESS } from './constants'
+import { REPOS_REQUEST, REPOS_REQUEST_SUCCESS } from './actionTypes'
 
 export function reposRequest() {
   return {

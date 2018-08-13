@@ -1,11 +1,11 @@
-import { REPOS_REQUEST, REPOS_REQUEST_SUCCESS } from './constants'
+import { REPOS_REQUEST, REPOS_REQUEST_SUCCESS } from './actionTypes'
 
 const defaultState = {
   repos: [],
   loading: false
 }
 
-export default function (state = defaultState, action) {
+export default function(state = defaultState, action) {
   switch (action.type) {
     case REPOS_REQUEST:
       return {

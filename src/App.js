@@ -4,7 +4,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 import theme from './theme'
 import Routes from './Routes'
-import { Layout } from './components'
+import { Layout } from './shared'
 
 function App() {
   return (

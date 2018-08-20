@@ -6,7 +6,7 @@
     "es6": true,
     "jest": true
   },
-  "extends": ["happycode", "plugin:react/recommended"],
+  "extends": ["happycode", "react-app", "plugin:react/recommended"],
   "globals": {
     "context": true
   },

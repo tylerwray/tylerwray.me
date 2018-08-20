@@ -1,50 +1,51 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, Component } from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
-import { withRouter } from 'react-router-dom'
 
 import Header from '../pure/Header'
+import Main from '../pure/Main'
 
-import { toggleNavMenu } from '../actions'
-import { selectMenuOpen, selectNavItems } from '../selectors'
+class Layout extends Component {
+  static propTypes = {
+    children: PropTypes.object.isRequired
+  }
 
-function Layout(props) {
-  const { children, navItems, menuOpen, toggleMenu } = props
+  navItems = [
+    { label: 'Home', to: '/' },
+    { label: 'Projects', to: '/projects' },
+    { label: 'Contact', to: '/contact' }
+  ]
 
-  return (
-    <Fragment>
-      <Header navItems={navItems} menuOpen={menuOpen} toggleMenu={toggleMenu} />
-      <main style={{ paddingTop: 60 }}>{children}</main>
-    </Fragment>
-  )
-}
+  state = {
+    menuOpen: false
+  }
 
-Layout.propTypes = {
-  children: PropTypes.object.isRequired,
-  navItems: PropTypes.arrayOf(PropTypes.object).isRequired,
-  menuOpen: PropTypes.bool.isRequired,
-  toggleMenu: PropTypes.func.isRequired
-}
+  constructor(props) {
+    super(props)
 
-function mapStateToProps(state) {
-  return {
-    menuOpen: selectMenuOpen(state),
-    navItems: selectNavItems(state)
+    this.toggleMenu = this.toggleMenu.bind(this)
+  }
+
+  toggleMenu() {
+    this.setState(prevState => ({
+      menuOpen: !prevState.menuOpen
+    }))
+  }
+
+  render() {
+    const { children } = this.props
+    const { menuOpen } = this.state
+
+    return (
+      <Fragment>
+        <Header
+          navItems={this.navItems}
+          menuOpen={menuOpen}
+          toggleMenu={this.toggleMenu}
+        />
+        <Main>{children}</Main>
+      </Fragment>
+    )
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    toggleMenu: () => {
-      dispatch(toggleNavMenu())
-    }
-  }
-}
-
-// withRouter allows routing to this component
-export default withRouter(
-  connect(
-    mapStateToProps,
-    mapDispatchToProps
-  )(Layout)
-)
+export default Layout

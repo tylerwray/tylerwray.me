@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
 
 import { withStyles } from '@material-ui/core/styles'
+import { fade } from '@material-ui/core/styles/colorManipulator'
 
 function styles(theme) {
   const SIDE_NAV_WIDTH = 250
@@ -58,11 +59,17 @@ function styles(theme) {
       color: theme.palette.common.black
     },
     activeSideNavLink: {
-      backgroundColor: theme.palette.primary.lightest,
-      color: theme.palette.primary.darkest,
+      backgroundColor: fade(
+        theme.palette.primary.main,
+        theme.palette.action.hoverOpacity * 2
+      ),
+      color: theme.palette.primary.dark,
       '&:hover': {
-        backgroundColor: theme.palette.primary.lightest,
-        color: theme.palette.primary.darkest
+        backgroundColor: fade(
+          theme.palette.primary.main,
+          theme.palette.action.hoverOpacity * 2
+        ),
+        color: theme.palette.primary.dark
       }
     }
   }

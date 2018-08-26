@@ -27,12 +27,12 @@ function styles(theme) {
       height: 50
     },
     gitHubIcon: {
-      fill: theme.palette.secondary.main,
+      fill: theme.palette.primary.main,
       height: 20,
       marginRight: 10
     },
     gitHubText: {
-      color: theme.palette.secondary.main
+      color: theme.palette.primary.main
     }
   }
 }
@@ -52,7 +52,7 @@ function Repo(props) {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button href={repo.html_url} color="secondary" target="_blank">
+          <Button href={repo.html_url} color="primary" target="_blank">
             <Github className={classes.gitHubIcon} />
             <span className={classes.gitHubText}>View on Github</span>
           </Button>

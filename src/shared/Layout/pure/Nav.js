@@ -9,20 +9,21 @@ import { NavLink } from 'react-router-dom'
 function styles(theme) {
   return {
     navLink: {
-      padding: 10,
+      padding: 17,
       textDecoration: 'none',
       fontSize: 18,
       marginRight: 15,
       fontFamily: theme.typography.fontFamily,
-      borderRadius: 5,
-      color: theme.palette.common.white,
+      color: theme.palette.grey[400],
+      transition: 'color 300ms ease',
+      transitionOrigin: 'bottom',
       '&:hover': {
-        backgroundColor: theme.palette.secondary.main
+        backgroundColor: theme.palette.primary.main
       }
     },
     activeNavLink: {
-      backgroundColor: theme.palette.secondary.main,
-      boxShadow: theme.shadows[5]
+      color: theme.palette.common.white,
+      borderBottom: '3px solid white'
     }
   }
 }

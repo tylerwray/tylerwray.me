@@ -16,9 +16,7 @@ import SideNav from './SideNav'
 function styles(theme) {
   return {
     appBar: {
-      background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${
-        theme.palette.secondary.main
-      })`
+      backgroundColor: theme.palette.primary.main
     },
     menuIcon: {
       color: 'white',

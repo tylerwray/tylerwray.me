@@ -5,56 +5,53 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import profile from '../media/images/profile.jpg'
+import profile from '../../../images/profile.jpg'
 
 function styles(theme) {
   return {
-    focusStyle: {
-      marginBottom: theme.spacing.unit * 3,
-      textAlign: 'center'
-    },
-    portraitStyle: {
-      maxWidth: 250,
+    focus: { marginBottom: theme.spacing.unit * 3, textAlign: 'center' },
+    portrait: {
+      width: 250,
+      height: 250,
       borderRadius: '50%',
-      backgroundColor: theme.palette.grey[400],
-      margin: '25px auto',
-      boxShadow: theme.shadows[5]
+      backgroundImage: `url(${profile})`,
+      backgroundSize: '100%',
+      boxShadow: theme.shadows[10],
+      margin: '25px auto'
     },
-    missionStatementStyle: {
+    missionStatement: {
       padding: '0 25px',
       maxWidth: theme.breakpoints.values.sm,
       margin: '0 auto'
     },
-    statementStyle: {
+    statement: {
       fontWeight: theme.typography.fontWeightLight,
       fontSize: theme.typography.title.fontSize,
-      padding: theme.spacing.unit
+      padding: theme.spacing.unit,
+      textAlign: 'left'
     },
-    emphasisStyle: {
-      fontWeight: theme.typography.fontWeightMedium
-    }
+    emphasis: { fontWeight: theme.typography.fontWeightMedium }
   }
 }
 
 function Focus({ classes }) {
   return (
-    <div className={classes.focusStyle}>
-      <img src={profile} alt="Tyler Wray" className={classes.portraitStyle} />
+    <div className={classes.focus}>
+      <div alt="Tyler Wray" className={classes.portrait} />
       <div>
-        <div className={classes.missionStatementStyle}>
-          <Typography color="textSecondary" className={classes.statementStyle}>
+        <div className={classes.missionStatement}>
+          <Typography color="textSecondary" className={classes.statement}>
             I will work daily to{' '}
-            <span className={classes.emphasisStyle}>improve lives</span> of
-            others
+            <span className={classes.emphasis}>improve lives</span> of others
           </Typography>
-          <Typography color="textSecondary" className={classes.statementStyle}>
+          <Typography color="textSecondary" className={classes.statement}>
             Software I create will be of the{' '}
-            <span className={classes.emphasisStyle}>highest quality</span>, and
+            <span className={classes.emphasis}>highest quality</span>, and
             tested thorougly
           </Typography>
-          <Typography color="textSecondary" className={classes.statementStyle}>
+          <Typography color="textSecondary" className={classes.statement}>
             People who work with me will recieve{' '}
-            <span className={classes.emphasisStyle}>my best self</span> each day
+            <span className={classes.emphasis}>my best self</span> each day
           </Typography>
         </div>
       </div>

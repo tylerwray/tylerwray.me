@@ -8,10 +8,10 @@ import CardMedia from '@material-ui/core/CardMedia'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 
-import football from '../media/images/football-happy.jpg'
-import uvu from '../media/images/uvu_emblem.png'
-import family from '../media/images/family.jpg'
-import code from '../media/images/code.jpg'
+import football from '../../../images/football-happy.jpg'
+import uvu from '../../../images/uvu_emblem.png'
+import family from '../../../images/family.jpg'
+import code from '../../../images/code.jpg'
 
 import Focus from './Focus'
 

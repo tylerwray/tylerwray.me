@@ -9,15 +9,15 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 
-import brandColors from '../media/colors/brands'
 import green from '@material-ui/core/colors/green'
 import deepPurple from '@material-ui/core/colors/deepPurple'
+import brandColors from '../colors/brands'
 
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
-import LinkedInIcon from '../media/images/linkedin.svg'
-import GithubIcon from '../media/images/github-black.png'
-import TwitterIcon from '../media/images/twitter.svg'
+import LinkedInIcon from '../../../images/linkedin.svg'
+import GithubIcon from '../../../images/github-black.png'
+import TwitterIcon from '../../../images/twitter.svg'
 
 function styles(theme) {
   const iconStyle = {

@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 import Grid from '@material-ui/core/Grid'
 
-import Github from '../media/images/github.svg'
+import Github from '../../../images/github.svg'
 
 function styles(theme) {
   const card = {

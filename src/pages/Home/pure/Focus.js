@@ -9,7 +9,9 @@ import profile from '../../../images/profile.jpg'
 
 function styles(theme) {
   return {
-    focus: { marginBottom: theme.spacing.unit * 3, textAlign: 'center' },
+    focus: {
+      textAlign: 'center'
+    },
     portrait: {
       width: 250,
       height: 250,
@@ -17,18 +19,28 @@ function styles(theme) {
       backgroundImage: `url(${profile})`,
       backgroundSize: '100%',
       boxShadow: theme.shadows[10],
-      margin: '25px auto'
+      margin: '25px auto',
+      [theme.breakpoints.up('sm')]: {
+        width: 350,
+        height: 350
+      }
     },
     missionStatement: {
       padding: '0 25px',
       maxWidth: theme.breakpoints.values.sm,
-      margin: '0 auto'
+      margin: '0 auto',
+      [theme.breakpoints.up('sm')]: {
+        fontSize: theme.typography.headline.fontSize
+      }
     },
     statement: {
       fontWeight: theme.typography.fontWeightLight,
       fontSize: theme.typography.title.fontSize,
       padding: theme.spacing.unit,
-      textAlign: 'left'
+      textAlign: 'left',
+      [theme.breakpoints.up('sm')]: {
+        fontSize: theme.typography.headline.fontSize
+      }
     },
     emphasis: { fontWeight: theme.typography.fontWeightMedium }
   }

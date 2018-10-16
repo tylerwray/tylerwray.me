@@ -12,7 +12,8 @@ class Layout extends Component {
   navItems = [
     { label: 'Home', to: '/' },
     { label: 'Projects', to: '/projects' },
-    { label: 'Contact', to: '/contact' }
+    { label: 'Contact', to: '/contact' },
+    { label: 'Work history', to: '/work-history' }
   ]
 
   state = {

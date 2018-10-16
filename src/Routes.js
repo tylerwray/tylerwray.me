@@ -16,11 +16,17 @@ function Routes() {
     loading: Loading
   })
 
+  const WorkHistory = Loadable({
+    loader: () => import('./pages/WorkHistory'),
+    loading: Loading
+  })
+
   return (
     <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/projects" component={Projects} />
       <Route exact path="/contact" component={Contact} />
+      <Route exact path="/work-history" component={WorkHistory} />
       <Redirect to="/" />
     </Switch>
   )

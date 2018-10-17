@@ -64,7 +64,12 @@ function Header({ classes, navItems, menuOpen, toggleMenu }) {
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-  navItems: PropTypes.arrayOf(PropTypes.object),
+  navItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      to: PropTypes.string.isRequired
+    })
+  ),
   menuOpen: PropTypes.bool.isRequired,
   toggleMenu: PropTypes.func.isRequired
 }

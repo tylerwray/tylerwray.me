@@ -15,7 +15,16 @@ class KeyLogger extends React.Component {
   }
 
   checkSecret(str) {
-    return ['kapteyn', 'nate', 'misty', 'jonathan', 'jason'].includes(str)
+    return [
+      'kapteyn',
+      'nate',
+      'misty',
+      'jonathan',
+      'jason',
+      'tyler',
+      'kolten',
+      'jennifer'
+    ].includes(str)
   }
 
   handleKeyChange(event) {

@@ -1,20 +1,16 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import WorkHistory from '../pure/WorkHistory'
 
-class KeyLogger extends React.Component {
-  state = {
-    keys: [],
-    unlocked: false
-  }
+function KeyLogger() {
+  const [keys, setKeys] = useState([])
+  const [unlocked, setUnlocked] = useState(false)
+  const [size, setSize] = useState({
+    width: window.innerWidth,
+    height: window.innerHeight
+  })
 
-  constructor(props) {
-    super(props)
-
-    this.handleKeyChange = this.handleKeyChange.bind(this)
-  }
-
-  checkSecret(str) {
+  function checkSecret(str) {
     return [
       'kapteyn',
       'nate',
@@ -27,9 +23,14 @@ class KeyLogger extends React.Component {
     ].includes(str)
   }
 
-  handleKeyChange(event) {
-    const { keys, unlocked } = this.state
+  function handleResize() {
+    setSize({
+      width: window.innerWidth,
+      height: window.innerHeight
+    })
+  }
 
+  function handleKeyChange(event) {
     if (
       !unlocked &&
       !event.altKey &&
@@ -39,31 +40,31 @@ class KeyLogger extends React.Component {
     ) {
       const newKeys = [...keys, event.key]
 
-      if (this.checkSecret(newKeys.join(''))) {
-        this.setState({
-          unlocked: true
-        })
+      if (checkSecret(newKeys.join(''))) {
+        setUnlocked(true)
       } else {
-        this.setState({
-          keys: newKeys
-        })
+        setKeys(newKeys)
       }
     }
   }
 
-  componentDidMount() {
-    window.document.addEventListener('keydown', this.handleKeyChange)
-  }
+  useEffect(() => {
+    window.addEventListener('resize', handleResize)
+    window.document.addEventListener('keydown', handleKeyChange)
 
-  componentWillUnmount() {
-    window.document.removeEventListener('keydown', this.handleKeyChange)
-  }
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.document.removeEventListener('keydown', handleKeyChange)
+    }
+  })
 
-  render() {
-    const { unlocked } = this.state
-
-    return <WorkHistory onKeyPress={this.handleKeyChange} unlocked={unlocked} />
-  }
+  return (
+    <WorkHistory
+      confettiSize={size}
+      onKeyPress={handleKeyChange}
+      unlocked={unlocked}
+    />
+  )
 }
 
 export default KeyLogger

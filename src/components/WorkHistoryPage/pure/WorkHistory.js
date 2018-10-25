@@ -4,28 +4,29 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
-import sizeMe from 'react-sizeme'
 import Confetti from 'react-confetti'
 
 const styles = {
-  root: {
-    position: 'absolute',
-    left: 0,
-    width: '100%',
-    height: '100%'
-  },
   thinker: {
     fontSize: 128
   }
 }
 
-function WorkHistory({ classes, onKeyPress, unlocked, size }) {
+function WorkHistory({ classes, onKeyPress, unlocked, confettiSize }) {
   return (
-    <div className={classes.root} onKeyPress={onKeyPress}>
+    <div
+      style={{
+        width: confettiSize.width,
+        height: confettiSize.height,
+        position: 'absolute',
+        left: 0
+      }}
+      onKeyPress={onKeyPress}
+    >
       <Grid container justify="center">
         <Grid item>
           <div className={classes.thinker}>{unlocked ? '😍' : '🤔'}</div>
-          {unlocked && <Confetti {...size} />}
+          {unlocked && <Confetti {...confettiSize} />}
           {unlocked && (
             <audio
               autoPlay
@@ -42,15 +43,10 @@ WorkHistory.propTypes = {
   classes: PropTypes.object.isRequired,
   onKeyPress: PropTypes.func.isRequired,
   unlocked: PropTypes.bool.isRequired,
-  size: PropTypes.shape({
+  confettiSize: PropTypes.shape({
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired
   })
 }
 
-export default withStyles(styles)(
-  sizeMe({
-    monitorHeight: true,
-    monitorWidth: true
-  })(WorkHistory)
-)
+export default withStyles(styles)(WorkHistory)

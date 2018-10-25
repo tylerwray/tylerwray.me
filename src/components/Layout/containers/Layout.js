@@ -1,52 +1,37 @@
-import React, { Fragment, Component } from 'react'
+import React, { Fragment, useState } from 'react'
 import PropTypes from 'prop-types'
 
 import Header from '../pure/Header'
 import Main from '../pure/Main'
 
-class Layout extends Component {
-  static propTypes = {
-    children: PropTypes.object.isRequired
+const NAV_ITEMS = [
+  { label: 'Home', to: '/' },
+  { label: 'Projects', to: '/projects' },
+  { label: 'Contact', to: '/contact' },
+  { label: 'Work history', to: '/work-history' }
+]
+
+function Layout({ children }) {
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  function toggleMenu() {
+    setMenuOpen(!menuOpen)
   }
 
-  navItems = [
-    { label: 'Home', to: '/' },
-    { label: 'Projects', to: '/projects' },
-    { label: 'Contact', to: '/contact' },
-    { label: 'Work history', to: '/work-history' }
-  ]
+  return (
+    <Fragment>
+      <Header
+        navItems={NAV_ITEMS}
+        menuOpen={menuOpen}
+        toggleMenu={toggleMenu}
+      />
+      <Main>{children}</Main>
+    </Fragment>
+  )
+}
 
-  state = {
-    menuOpen: false
-  }
-
-  constructor(props) {
-    super(props)
-
-    this.toggleMenu = this.toggleMenu.bind(this)
-  }
-
-  toggleMenu() {
-    this.setState(prevState => ({
-      menuOpen: !prevState.menuOpen
-    }))
-  }
-
-  render() {
-    const { children } = this.props
-    const { menuOpen } = this.state
-
-    return (
-      <Fragment>
-        <Header
-          navItems={this.navItems}
-          menuOpen={menuOpen}
-          toggleMenu={this.toggleMenu}
-        />
-        <Main>{children}</Main>
-      </Fragment>
-    )
-  }
+Layout.propTypes = {
+  children: PropTypes.object.isRequired
 }
 
 export default Layout

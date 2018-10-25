@@ -1,28 +1,18 @@
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Repos from '../pure/Repos'
 import { getRepos } from '../services/repos'
 
-class ProjectsPage extends Component {
-  state = {
-    repos: []
-  }
+function ProjectsPage() {
+  const [repos, setRepos] = useState([])
 
-  async componentDidMount() {
-    const { repos } = this.state
-
+  useEffect(() => {
     if (repos.length === 0) {
-      this.setState({
-        repos: await getRepos()
-      })
+      getRepos().then(setRepos)
     }
-  }
+  })
 
-  render() {
-    const { repos } = this.state
-
-    return <Repos repos={repos} />
-  }
+  return <Repos repos={repos} />
 }
 
 export default ProjectsPage

@@ -44,7 +44,7 @@ function Repo(props) {
     <Grid item key={repo.url}>
       <Card className={classes.card}>
         <CardContent>
-          <Typography className={classes.title} variant="title">
+          <Typography className={classes.title} variant="h6">
             {repo.name}
           </Typography>
           <Typography className={classes.description} color="textSecondary">

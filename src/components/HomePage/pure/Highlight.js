@@ -30,7 +30,7 @@ function Highlight(props) {
     <Card className={classes.card}>
       <CardMedia className={classes.media} image={image} title={title} />
       <CardContent>
-        <Typography gutterBottom variant="headline" component="h2">
+        <Typography gutterBottom variant="h6">
           {title}
         </Typography>
         <Typography className={classes.cardSubTitle} variant="caption">

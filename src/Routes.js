@@ -1,21 +1,37 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 
 import { Redirect, Switch, Route } from 'react-router-dom'
+import CircularProgress from '@material-ui/core/CircularProgress'
 
 import HomePage from './components/HomePage'
-import ProjectsPage from './components/ProjectsPage'
-import ContactPage from './components/ContactPage'
-import WorkHistoryPage from './components/WorkHistoryPage'
+
+const ProjectsPage = React.lazy(() => import('./components/ProjectsPage'))
+const ContactPage = React.lazy(() => import('./components/ContactPage'))
+const WorkHistoryPage = React.lazy(() => import('./components/WorkHistoryPage'))
 
 function Routes() {
   return (
-    <Switch>
-      <Route exact path="/" component={HomePage} />
-      <Route exact path="/projects" component={ProjectsPage} />
-      <Route exact path="/contact" component={ContactPage} />
-      <Route exact path="/work-history" component={WorkHistoryPage} />
-      <Redirect to="/" />
-    </Switch>
+    <Suspense fallback={<CircularProgress />}>
+      <Switch>
+        <Route exact path="/" component={HomePage} />
+        <Route
+          exact
+          path="/projects"
+          component={props => <ProjectsPage {...props} />}
+        />
+        <Route
+          exact
+          path="/contact"
+          component={props => <ContactPage {...props} />}
+        />
+        <Route
+          exact
+          path="/work history"
+          component={props => <WorkHistoryPage {...props} />}
+        />
+        <Redirect to="/" />
+      </Switch>
+    </Suspense>
   )
 }
 

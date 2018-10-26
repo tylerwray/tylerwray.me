@@ -26,7 +26,7 @@ function Routes() {
         />
         <Route
           exact
-          path="/work history"
+          path="/work-history"
           component={props => <WorkHistoryPage {...props} />}
         />
         <Redirect to="/" />

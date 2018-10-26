@@ -2,29 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { withStyles } from '@material-ui/core/styles'
-import Card from '@material-ui/core/Card'
-import CardActions from '@material-ui/core/CardActions'
-import CardContent from '@material-ui/core/CardContent'
+import ExpansionPanel from '@material-ui/core/ExpansionPanel'
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
+import ExpansionPanelActions from '@material-ui/core/ExpansionPanelActions'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
-import Grid from '@material-ui/core/Grid'
 
 import Github from '../../../images/github.svg'
 
 function styles(theme) {
-  const card = {
-    minWidth: 275,
-    maxWidth: 275,
-    margin: 10
-  }
-
   return {
-    card,
-    title: {
-      marginBottom: 16
-    },
-    description: {
-      height: 50
+    details: {
+      paddingTop: 0,
+      paddingBottom: 0
     },
     gitHubIcon: {
       fill: theme.palette.primary.main,
@@ -41,24 +33,25 @@ function Repo(props) {
   const { classes, repo } = props
 
   return (
-    <Grid item key={repo.url}>
-      <Card className={classes.card}>
-        <CardContent>
-          <Typography className={classes.title} variant="h6">
-            {repo.name}
-          </Typography>
-          <Typography className={classes.description} color="textSecondary">
-            {repo.description}
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button href={repo.html_url} color="primary" target="_blank">
-            <Github className={classes.gitHubIcon} />
-            <span className={classes.gitHubText}>View on Github</span>
-          </Button>
-        </CardActions>
-      </Card>
-    </Grid>
+    <ExpansionPanel>
+      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+        <Typography variant="subtitle1">{repo.name}</Typography>
+      </ExpansionPanelSummary>
+      <ExpansionPanelDetails classes={{ root: classes.details }}>
+        <Typography>{repo.description}</Typography>
+      </ExpansionPanelDetails>
+      <ExpansionPanelActions>
+        <Button
+          size="small"
+          href={repo.html_url}
+          color="primary"
+          target="_blank"
+        >
+          <Github className={classes.gitHubIcon} />
+          <span className={classes.gitHubText}>View on Github</span>
+        </Button>
+      </ExpansionPanelActions>
+    </ExpansionPanel>
   )
 }
 

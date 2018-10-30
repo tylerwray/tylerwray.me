@@ -25,6 +25,7 @@
     "react": "^16.7.0-alpha.0",
     "react-confetti": "^2.3.0",
     "react-dom": "^16.7.0-alpha.0",
+    "react-ga": "^2.5.3",
     "react-scripts": "^2.0.4"
   },
   "browserslist": [

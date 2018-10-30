@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import classNames from 'classnames'
 
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
-
-import { NavLink } from 'react-router-dom'
+import { Link } from '@reach/router'
 
 function styles(theme) {
   return {
@@ -34,15 +34,19 @@ function Nav({ classes, items }) {
       <Grid container>
         {items.map(x => (
           <Grid item key={x.label}>
-            <NavLink
+            <Link
               key={x.label}
-              className={classes.navLink}
-              exact
-              activeClassName={classes.activeNavLink}
               to={x.to}
+              getProps={({ isCurrent }) => {
+                return {
+                  className: classNames(classes.navLink, {
+                    [classes.activeNavLink]: isCurrent
+                  })
+                }
+              }}
             >
               {x.label}
-            </NavLink>
+            </Link>
           </Grid>
         ))}
       </Grid>

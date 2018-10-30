@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
-
-import { NavLink } from 'react-router-dom'
+import classNames from 'classnames'
+import { Link } from '@reach/router'
 
 import { withStyles } from '@material-ui/core/styles'
 import { fade } from '@material-ui/core/styles/colorManipulator'
@@ -86,16 +86,20 @@ function SideNav({ classes, items, open, onClose }) {
         className={`${classes.sideNav} ${open ? classes.open : classes.closed}`}
       >
         {items.map(x => (
-          <NavLink
+          <Link
             key={x.label}
-            className={classes.sideNavLink}
-            exact
-            activeClassName={classes.activeSideNavLink}
             onClick={onClose}
             to={x.to}
+            getProps={({ isCurrent }) => {
+              return {
+                className: classNames(classes.sideNavLink, {
+                  [classes.activeSideNavLink]: isCurrent
+                })
+              }
+            }}
           >
             {x.label}
-          </NavLink>
+          </Link>
         ))}
       </div>
     </Fragment>

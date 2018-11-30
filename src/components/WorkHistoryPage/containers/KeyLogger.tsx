@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react'
+import { RouteComponentProps } from '@reach/router'
 
 import WorkHistory from '../pure/WorkHistory'
 
-function KeyLogger() {
-  const [keys, setKeys] = useState([])
+function KeyLogger(props: RouteComponentProps) {
+  const initialKeys: Array<string> = []
+  const [keys, setKeys] = useState(initialKeys)
   const [unlocked, setUnlocked] = useState(false)
   const [size, setSize] = useState({
     width: window.innerWidth,
     height: window.innerHeight
   })
 
-  function checkSecret(str) {
+  function checkSecret(str: string) {
     return [
       'kapteyn',
       'nate',
@@ -20,7 +22,7 @@ function KeyLogger() {
       'tyler',
       'kolten',
       'jennifer'
-    ].includes(str)
+    ].some(x => x === str)
   }
 
   function handleResize() {
@@ -30,7 +32,7 @@ function KeyLogger() {
     })
   }
 
-  function handleKeyChange(event) {
+  function handleKeyChange(event: KeyboardEvent) {
     if (
       !unlocked &&
       !event.altKey &&
@@ -61,7 +63,6 @@ function KeyLogger() {
   return (
     <WorkHistory
       confettiSize={size}
-      onKeyPress={handleKeyChange}
       unlocked={unlocked}
     />
   )

@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react'
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { Link } from '@reach/router'
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Theme, createStyles } from '@material-ui/core/styles'
 import { fade } from '@material-ui/core/styles/colorManipulator'
+import { NavItem } from '../types';
 
-function styles(theme) {
+function styles(theme: Theme) {
   const SIDE_NAV_WIDTH = 250
   const SIDE_NAV_LINK_HEIGHT = 50
 
-  return {
+  return createStyles({
     sideNav: {
       position: 'fixed',
       left: 0,
@@ -72,10 +72,25 @@ function styles(theme) {
         color: theme.palette.primary.dark
       }
     }
-  }
+  })
 }
 
-function SideNav({ classes, items, open, onClose }) {
+interface Props {
+  classes: {
+    sideNav: string
+    open: string
+    closed: string
+    overlay: string
+    visible: string
+    sideNavLink: string
+    activeSideNavLink: string
+  }
+  items: Array<NavItem>
+  open: boolean
+  onClose(event: React.MouseEvent): void
+}
+
+function SideNav({ classes, items, open, onClose }: Props) {
   return (
     <Fragment>
       <div
@@ -104,13 +119,6 @@ function SideNav({ classes, items, open, onClose }) {
       </div>
     </Fragment>
   )
-}
-
-SideNav.propTypes = {
-  classes: PropTypes.object.isRequired,
-  items: PropTypes.arrayOf(PropTypes.object),
-  open: PropTypes.bool.isRequired,
-  onClose: PropTypes.func.isRequired
 }
 
 export default withStyles(styles)(SideNav)

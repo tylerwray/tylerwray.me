@@ -10,7 +10,7 @@ const ProjectsPage = React.lazy(() => import('./components/ProjectsPage'))
 const ContactPage = React.lazy(() => import('./components/ContactPage'))
 const WorkHistoryPage = React.lazy(() => import('./components/WorkHistoryPage'))
 
-ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_UA_CODE)
+ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_UA_CODE || '')
 
 function Routes() {
   return (

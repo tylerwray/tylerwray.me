@@ -1,12 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import classNames from 'classnames'
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Theme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import { Link } from '@reach/router'
 
-function styles(theme) {
+import { NavItem } from '../types'
+
+function styles(theme: Theme) {
   return {
     navLink: {
       padding: 17,
@@ -28,7 +29,15 @@ function styles(theme) {
   }
 }
 
-function Nav({ classes, items }) {
+interface Props {
+  classes: {
+    navLink: string
+    activeNavLink: string
+  }
+  items: Array<NavItem>
+}
+
+function Nav({ classes, items }: Props) {
   return (
     <Grid item>
       <Grid container>
@@ -52,11 +61,6 @@ function Nav({ classes, items }) {
       </Grid>
     </Grid>
   )
-}
-
-Nav.propTypes = {
-  classes: PropTypes.object.isRequired,
-  items: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
 export default withStyles(styles)(Nav)

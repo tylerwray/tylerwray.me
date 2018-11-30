@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
@@ -12,9 +11,10 @@ import MenuIcon from '@material-ui/icons/Menu'
 
 import Nav from './Nav'
 import SideNav from './SideNav'
+import { NavItem } from '../types'
 
-function styles(theme) {
-  return {
+function styles(theme: Theme) {
+  return createStyles({
     appBar: {
       backgroundColor: theme.palette.primary.main
     },
@@ -30,13 +30,24 @@ function styles(theme) {
         fontSize: 24
       }
     }
-  }
+  })
 }
 
-function Header({ classes, navItems, menuOpen, toggleMenu }) {
+interface Props {
+  classes: {
+    appBar: string
+    menuIcon: string
+    name: string
+  }
+  navItems: Array<NavItem>
+  menuOpen: boolean
+  toggleMenu(event: React.MouseEvent): void
+}
+
+function Header({ classes, navItems, menuOpen, toggleMenu }: Props) {
   return (
     <AppBar className={classes.appBar} position="fixed">
-      <Toolbar className={classes.toolBar}>
+      <Toolbar>
         <Grid container justify="space-between" alignItems="center">
           <Hidden mdUp>
             <Grid item>
@@ -60,18 +71,6 @@ function Header({ classes, navItems, menuOpen, toggleMenu }) {
       </Hidden>
     </AppBar>
   )
-}
-
-Header.propTypes = {
-  classes: PropTypes.object.isRequired,
-  navItems: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      to: PropTypes.string.isRequired
-    })
-  ),
-  menuOpen: PropTypes.bool.isRequired,
-  toggleMenu: PropTypes.func.isRequired
 }
 
 export default withStyles(styles)(Header)

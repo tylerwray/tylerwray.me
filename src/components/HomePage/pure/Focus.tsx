@@ -1,14 +1,12 @@
 import React from 'react'
 
-import PropTypes from 'prop-types'
-
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
 import profile from '../../../images/profile.jpg'
 
-function styles(theme) {
-  return {
+function styles(theme: Theme) {
+  return createStyles({
     focus: {
       textAlign: 'center'
     },
@@ -43,13 +41,23 @@ function styles(theme) {
       }
     },
     emphasis: { fontWeight: theme.typography.fontWeightMedium }
+  })
+}
+
+interface Props {
+  classes: {
+    focus: string
+    portrait: string
+    missionStatement: string
+    statement: string
+    emphasis: string
   }
 }
 
-function Focus({ classes }) {
+function Focus({ classes }: Props) {
   return (
     <div className={classes.focus}>
-      <div alt="Tyler Wray" className={classes.portrait} />
+      <div className={classes.portrait} />
       <div>
         <div className={classes.missionStatement}>
           <Typography color="textSecondary" className={classes.statement}>
@@ -69,10 +77,6 @@ function Focus({ classes }) {
       </div>
     </div>
   )
-}
-
-Focus.propTypes = {
-  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Focus)

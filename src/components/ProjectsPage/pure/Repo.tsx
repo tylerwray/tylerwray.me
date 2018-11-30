@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Theme } from '@material-ui/core/styles'
 import ExpansionPanel from '@material-ui/core/ExpansionPanel'
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary'
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails'
@@ -10,28 +9,36 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
-import Github from '../../../images/github.svg'
+import Github from '../../../images/Github'
+import { IRepo } from '../types'
 
-function styles(theme) {
+function styles(theme: Theme) {
   return {
     details: {
       paddingTop: 0,
       paddingBottom: 0
     },
-    gitHubIcon: {
+    githubIcon: {
       fill: theme.palette.primary.main,
       height: 20,
       marginRight: 10
     },
-    gitHubText: {
+    githubText: {
       color: theme.palette.primary.main
     }
   }
 }
 
-function Repo(props) {
-  const { classes, repo } = props
+interface Props {
+  classes: {
+    details: string
+    githubIcon: string
+    githubText: string
+  }
+  repo: IRepo
+}
 
+function Repo({ classes, repo }: Props) {
   return (
     <ExpansionPanel>
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
@@ -47,17 +54,12 @@ function Repo(props) {
           color="primary"
           target="_blank"
         >
-          <Github className={classes.gitHubIcon} />
-          <span className={classes.gitHubText}>View on Github</span>
+          <Github className={classes.githubIcon} />
+          <span className={classes.githubText}>View on Github</span>
         </Button>
       </ExpansionPanelActions>
     </ExpansionPanel>
   )
-}
-
-Repo.propTypes = {
-  classes: PropTypes.object.isRequired,
-  repo: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Repo)

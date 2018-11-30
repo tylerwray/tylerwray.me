@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { withStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
@@ -12,7 +11,18 @@ const styles = {
   }
 }
 
-function WorkHistory({ classes, onKeyPress, unlocked, confettiSize }) {
+interface Props {
+  classes: {
+    thinker: string
+  }
+  unlocked: boolean
+  confettiSize: {
+    width: number
+    height: number
+  }
+}
+
+function WorkHistory({ classes, unlocked, confettiSize }: Props) {
   return (
     <div
       style={{
@@ -21,7 +31,6 @@ function WorkHistory({ classes, onKeyPress, unlocked, confettiSize }) {
         position: 'absolute',
         left: 0
       }}
-      onKeyPress={onKeyPress}
     >
       <Grid container justify="center">
         <Grid item>
@@ -37,16 +46,6 @@ function WorkHistory({ classes, onKeyPress, unlocked, confettiSize }) {
       </Grid>
     </div>
   )
-}
-
-WorkHistory.propTypes = {
-  classes: PropTypes.object.isRequired,
-  onKeyPress: PropTypes.func.isRequired,
-  unlocked: PropTypes.bool.isRequired,
-  confettiSize: PropTypes.shape({
-    width: PropTypes.number.isRequired,
-    height: PropTypes.number.isRequired
-  })
 }
 
 export default withStyles(styles)(WorkHistory)

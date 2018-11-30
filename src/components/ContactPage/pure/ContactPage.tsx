@@ -1,7 +1,6 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
@@ -15,17 +14,18 @@ import brandColors from '../colors/brands'
 
 import PhoneIcon from '@material-ui/icons/Phone'
 import EmailIcon from '@material-ui/icons/Email'
-import LinkedInIcon from '../../../images/linkedin.svg'
+import LinkedInIcon from '../../../images/Linkedin'
 import GithubIcon from '../../../images/github-black.png'
-import TwitterIcon from '../../../images/twitter.svg'
+import TwitterIcon from '../../../images/Twitter'
+import { RouteComponentProps } from '@reach/router'
 
-function styles(theme) {
+function styles(theme: Theme) {
   const iconStyle = {
     height: theme.spacing.unit * 2,
     marginRight: theme.spacing.unit
   }
 
-  return {
+  return createStyles({
     root: {
       marginTop: theme.spacing.unit * 2
     },
@@ -94,10 +94,29 @@ function styles(theme) {
       ...iconStyle,
       height: '0.85em'
     }
+  })
+}
+
+interface Props extends RouteComponentProps {
+  classes: {
+    root: string
+    title: string
+    subTitle: string
+    contactCard: string
+    linkedIn: string
+    linkedInIcon: string
+    github: string
+    githubIcon: string
+    twitter: string
+    twitterIcon: string
+    phone: string
+    phoneIcon: string
+    email: string
+    emailIcon: string
   }
 }
 
-function Contact({ classes }) {
+function Contact({ classes }: Props) {
   return (
     <Grid
       className={classes.root}
@@ -207,10 +226,6 @@ function Contact({ classes }) {
       </Grid>
     </Grid>
   )
-}
-
-Contact.propTypes = {
-  classes: PropTypes.object.isRequired
 }
 
 export default withStyles(styles)(Contact)

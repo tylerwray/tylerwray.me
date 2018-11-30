@@ -1,13 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles, Theme } from '@material-ui/core/styles'
 
 import Grid from '@material-ui/core/Grid'
 
 import Repo from './Repo'
+import { IRepo } from '../types';
 
-function styles(theme) {
+function styles(theme: Theme) {
   return {
     root: {
       marginTop: theme.spacing.unit * 2
@@ -15,9 +15,14 @@ function styles(theme) {
   }
 }
 
-function Repos(props) {
-  const { classes, repos } = props
+interface Props {
+  classes: {
+    root: string
+  }
+  repos: Array<IRepo>
+}
 
+function Repos({ classes, repos }: Props) {
   return (
     <Grid className={classes.root} container justify="space-around">
       <Grid item>
@@ -27,11 +32,6 @@ function Repos(props) {
       </Grid>
     </Grid>
   )
-}
-
-Repos.propTypes = {
-  classes: PropTypes.object.isRequired,
-  repos: PropTypes.array.isRequired
 }
 
 export default withStyles(styles)(Repos)

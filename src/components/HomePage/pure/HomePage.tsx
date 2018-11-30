@@ -1,4 +1,5 @@
 import React from 'react'
+import { RouteComponentProps } from '@reach/router'
 
 import football from '../../../images/football-happy.jpg'
 import uvu from '../../../images/uvu_emblem.png'
@@ -9,7 +10,7 @@ import Grid from '@material-ui/core/Grid'
 import Focus from './Focus'
 import Highlight from './Highlight'
 
-function Home() {
+function HomePage(props: RouteComponentProps) {
   return (
     <Grid container style={{ padding: 16 }}>
       <Grid item sm={12} md={6} lg={4}>
@@ -53,4 +54,4 @@ function Home() {
   )
 }
 
-export default Home
+export default HomePage

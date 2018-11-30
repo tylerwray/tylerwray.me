@@ -1,5 +1,4 @@
-import React, { Fragment, useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 
 import Header from '../pure/Header'
 import Main from '../pure/Main'
@@ -11,7 +10,11 @@ const NAV_ITEMS = [
   { label: 'Work history', to: '/work-history' }
 ]
 
-function Layout({ children }) {
+interface Props {
+  children: React.ReactNode
+}
+
+function Layout({ children }: Props) {
   const [menuOpen, setMenuOpen] = useState(false)
 
   function toggleMenu() {
@@ -19,19 +22,15 @@ function Layout({ children }) {
   }
 
   return (
-    <Fragment>
+    <>
       <Header
         navItems={NAV_ITEMS}
         menuOpen={menuOpen}
         toggleMenu={toggleMenu}
       />
       <Main>{children}</Main>
-    </Fragment>
+    </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.object.isRequired
 }
 
 export default Layout

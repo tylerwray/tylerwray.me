@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { RouteComponentProps } from '@reach/router'
 
-import Repos from '../pure/Repos'
+import RepoList from '../components/RepoList'
 import { getRepos } from '../services/repos'
-import { IRepo } from '../types';
+import { GithubRepo } from '../types'
 
-function ProjectsPage(props: RouteComponentProps) {
-  const initialRepos: Array<IRepo> = []
+function ProjectsPage(_: RouteComponentProps) {
+  const initialRepos: GithubRepo[] = []
   const [repos, setRepos] = useState(initialRepos)
 
   useEffect(() => {
@@ -15,7 +15,7 @@ function ProjectsPage(props: RouteComponentProps) {
     }
   })
 
-  return <Repos repos={repos} />
+  return <RepoList repos={repos} />
 }
 
 export default ProjectsPage

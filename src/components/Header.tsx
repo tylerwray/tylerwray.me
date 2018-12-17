@@ -39,7 +39,7 @@ interface Props {
     menuIcon: string
     name: string
   }
-  navItems: Array<NavItem>
+  navItems: NavItem[]
   menuOpen: boolean
   toggleMenu(event: React.MouseEvent): void
 }

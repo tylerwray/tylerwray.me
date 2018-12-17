@@ -34,7 +34,7 @@ interface Props {
     navLink: string
     activeNavLink: string
   }
-  items: Array<NavItem>
+  items: NavItem[]
 }
 
 function Nav({ classes, items }: Props) {

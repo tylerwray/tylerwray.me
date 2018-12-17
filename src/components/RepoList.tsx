@@ -5,7 +5,7 @@ import { withStyles, Theme } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 
 import Repo from './Repo'
-import { IRepo } from '../types';
+import { GithubRepo } from '../types'
 
 function styles(theme: Theme) {
   return {
@@ -19,7 +19,7 @@ interface Props {
   classes: {
     root: string
   }
-  repos: Array<IRepo>
+  repos: GithubRepo[]
 }
 
 function Repos({ classes, repos }: Props) {

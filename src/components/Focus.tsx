@@ -3,7 +3,7 @@ import React from 'react'
 import { withStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Typography from '@material-ui/core/Typography'
 
-import profile from '../../../images/profile.jpg'
+import profile from '../images/profile.jpg'
 
 function styles(theme: Theme) {
   return createStyles({

@@ -1,13 +1,16 @@
 import React from 'react'
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+import { MuiThemeProvider, Theme } from '@material-ui/core/styles'
 
-import theme from './theme'
 import Routes from './Routes'
-import Layout from './components/Layout'
+import Layout from './containers/Layout'
 
-function App() {
+interface Props {
+  theme: Theme
+}
+
+function App({ theme }: Props) {
   return (
-    <MuiThemeProvider theme={createMuiTheme(theme)}>
+    <MuiThemeProvider theme={theme}>
       <Layout>
         <Routes />
       </Layout>

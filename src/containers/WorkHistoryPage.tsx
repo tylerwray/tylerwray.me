@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { RouteComponentProps } from '@reach/router'
 
-import WorkHistory from '../pure/WorkHistory'
+import WorkHistory from '../components/WorkHistory'
 
-function KeyLogger(props: RouteComponentProps) {
+function WorkHistoryPage(_: RouteComponentProps) {
   const initialKeys: Array<string> = []
   const [keys, setKeys] = useState(initialKeys)
   const [unlocked, setUnlocked] = useState(false)
@@ -12,7 +12,7 @@ function KeyLogger(props: RouteComponentProps) {
     height: window.innerHeight
   })
 
-  function checkSecret(str: string) {
+  function checkSecret(secret: string) {
     return [
       'kapteyn',
       'nate',
@@ -22,7 +22,7 @@ function KeyLogger(props: RouteComponentProps) {
       'tyler',
       'kolten',
       'jennifer'
-    ].some(x => x === str)
+    ].some(x => x === secret)
   }
 
   function handleResize() {
@@ -60,12 +60,7 @@ function KeyLogger(props: RouteComponentProps) {
     }
   })
 
-  return (
-    <WorkHistory
-      confettiSize={size}
-      unlocked={unlocked}
-    />
-  )
+  return <WorkHistory confettiSize={size} unlocked={unlocked} />
 }
 
-export default KeyLogger
+export default WorkHistoryPage

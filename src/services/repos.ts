@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { IRepo } from '../types'
+import { GithubRepo } from '../types'
 
-export function getRepos(): Promise<Array<IRepo>> {
+export function getRepos(): Promise<GithubRepo[]> {
   return axios
     .get('https://api.github.com/users/tylerwray/repos')
     .then(res => res.data)

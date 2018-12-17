@@ -31,11 +31,11 @@ interface Props {
   }
   image: string
   title: string
-  description: string
+  children: string
 }
 
 function Highlight(props: Props) {
-  const { classes, image, title, description } = props
+  const { classes, image, title, children } = props
 
   return (
     <Card className={classes.card}>
@@ -45,7 +45,7 @@ function Highlight(props: Props) {
           {title}
         </Typography>
         <Typography className={classes.cardSubTitle} variant="caption">
-          {description}
+          {children}
         </Typography>
       </CardContent>
     </Card>

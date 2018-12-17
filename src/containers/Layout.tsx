@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import Header from '../pure/Header'
-import Main from '../pure/Main'
+import Header from '../components/Header'
+import Main from '../components/Main'
 
 const NAV_ITEMS = [
   { label: 'Home', to: '/' },

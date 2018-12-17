@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es5",
     "allowJs": true,
     "skipLibCheck": false,
     "esModuleInterop": true,
@@ -12,7 +12,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve"
+    "lib": ["es6", "dom"],
+    "jsx": "preserve",
+    "experimentalDecorators": true
   },
   "include": ["src"]
 }

@@ -9,8 +9,8 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
 
-import Github from '../../../images/Github'
-import { IRepo } from '../types'
+import Github from '../images/Github'
+import { GithubRepo } from '../types'
 
 function styles(theme: Theme) {
   return {
@@ -35,7 +35,7 @@ interface Props {
     githubIcon: string
     githubText: string
   }
-  repo: IRepo
+  repo: GithubRepo
 }
 
 function Repo({ classes, repo }: Props) {

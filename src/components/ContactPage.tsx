@@ -1,4 +1,5 @@
 import React from 'react'
+import { RouteComponentProps } from '@reach/router'
 
 import { withStyles, Theme, createStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
@@ -8,16 +9,15 @@ import Card from '@material-ui/core/Card'
 import CardActions from '@material-ui/core/CardActions'
 import CardContent from '@material-ui/core/CardContent'
 
-import green from '@material-ui/core/colors/green'
-import deepPurple from '@material-ui/core/colors/deepPurple'
+import { green, deepPurple } from '@material-ui/core/colors'
 import brandColors from '../colors/brands'
 
 import PhoneIcon from '@material-ui/icons/Phone'
-import EmailIcon from '@material-ui/icons/Email'
-import LinkedInIcon from '../../../images/Linkedin'
-import GithubIcon from '../../../images/github-black.png'
-import TwitterIcon from '../../../images/Twitter'
-import { RouteComponentProps } from '@reach/router'
+import EmailIcon from '@material-ui/icons/Phone'
+
+import LinkedInIcon from '../images/Linkedin'
+import GithubIcon from '../images/github-black.png'
+import TwitterIcon from '../images/Twitter'
 
 function styles(theme: Theme) {
   const iconStyle = {

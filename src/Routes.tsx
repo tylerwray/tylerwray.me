@@ -6,9 +6,9 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 
 import HomePage from './components/HomePage'
 
-const ProjectsPage = React.lazy(() => import('./components/ProjectsPage'))
+const ProjectsPage = React.lazy(() => import('./containers/ProjectsPage'))
 const ContactPage = React.lazy(() => import('./components/ContactPage'))
-const WorkHistoryPage = React.lazy(() => import('./components/WorkHistoryPage'))
+const WorkHistoryPage = React.lazy(() => import('./containers/WorkHistoryPage'))
 
 ReactGA.initialize(process.env.REACT_APP_GOOGLE_ANALYTICS_UA_CODE || '')
 

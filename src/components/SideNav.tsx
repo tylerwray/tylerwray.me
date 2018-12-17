@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 import classNames from 'classnames'
 import { Link } from '@reach/router'
 
 import { withStyles, Theme, createStyles } from '@material-ui/core/styles'
 import { fade } from '@material-ui/core/styles/colorManipulator'
-import { NavItem } from '../types';
+import { NavItem } from '../types'
 
 function styles(theme: Theme) {
   const SIDE_NAV_WIDTH = 250
@@ -92,7 +92,7 @@ interface Props {
 
 function SideNav({ classes, items, open, onClose }: Props) {
   return (
-    <Fragment>
+    <>
       <div
         onClick={onClose}
         className={`${classes.overlay} ${open && classes.visible}`}
@@ -117,7 +117,7 @@ function SideNav({ classes, items, open, onClose }: Props) {
           </Link>
         ))}
       </div>
-    </Fragment>
+    </>
   )
 }
 
